@@ -271,7 +271,7 @@ public interface XApi {
 
 
     //获取素材
-    @POST("v3/AdResouse")
+    @POST("v3/AdResouseV2")
     @FormUrlEncoded
     Observable<LanMuListResponse> getsucaihot(@FieldMap Map<String, String> map);
 
@@ -683,21 +683,21 @@ public interface XApi {
     Observable<ShopResponse> shopList(@FieldMap Map<String, String> map);
 
     //每日爆款头部
-    @POST("v3/DayHotCatev3")
+    @POST("v3/DayHotCateV2")
     Observable<LunTanTitleResponse> getDayHotHeader();
 
     //每日爆款列表
-    @POST("v3/DayHotv3")
+    @POST("v3/DayHotV2")
     @FormUrlEncoded
     Observable<LanMuListResponse> getDayHotList(@FieldMap Map<String, String> map);
 
     //每日爆款文章列表
-    @POST("v3/DayHotv3")
+    @POST("v3/DayHotV2")
     @FormUrlEncoded
     Observable<ArticleResponse> getDayHotArticleList(@FieldMap Map<String, String> map);
 
     //获取素材
-    @POST("v3/AdResousev3")
+    @POST("v3/AdResouseV2")
     @FormUrlEncoded
     Observable<LanMuListResponse> getResouseList(@FieldMap Map<String, String> map);
 

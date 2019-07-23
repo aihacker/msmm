@@ -191,7 +191,7 @@ public class LoginNewActivity extends BaseActivity {
 
                 break;
             case R.id.ll_phone:
-                Intent intent = new Intent(this, LoginActivity.class);
+                Intent intent = new Intent(this, RegisterActivity1.class);
                 startActivity(intent);
                 finish();
                 break;
@@ -401,7 +401,7 @@ public class LoginNewActivity extends BaseActivity {
         map.put("open_id", data.get("openid"));
         map.put("unionid", data.get("unionid"));
         map.put("userNick", data.get("name"));
-        EventBus.getDefault().post(new RefreshListData());
+//        EventBus.getDefault().post(new RefreshListData());
         new Request<LoginResponse>().request(RxJavaUtil.xApi().WxLogin(map), "微信登陆", LoginNewActivity.this, false, new Result<LoginResponse>() {
             @Override
             public void get(LoginResponse response) {

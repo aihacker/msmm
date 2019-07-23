@@ -29,12 +29,14 @@ import com.d2956987215.mow.activity.home.UserGuideActivity;
 import com.d2956987215.mow.activity.kotlin.BaseActivity;
 import com.d2956987215.mow.bean.LinkBean;
 import com.d2956987215.mow.dialog.LinkDialog;
+import com.d2956987215.mow.dialog.ShouYeDialog;
 import com.d2956987215.mow.imageloader.GlideImageLoader;
 import com.d2956987215.mow.rxjava.Request;
 import com.d2956987215.mow.rxjava.Result;
 import com.d2956987215.mow.rxjava.RxJavaUtil;
 import com.d2956987215.mow.rxjava.response.GuideResponse;
 import com.d2956987215.mow.util.ActivityUtils;
+import com.d2956987215.mow.util.AppFrontBackHelper;
 import com.d2956987215.mow.util.NetworkUtils;
 import com.d2956987215.mow.util.PermissionUtils;
 import com.d2956987215.mow.util.SP;
@@ -71,6 +73,7 @@ public class GuideActivity extends BaseActivity {
      */
     private Animation animation;
     private Context mContext;
+    private String content = "";
 
     /**
      * 是否是第一次使用
@@ -83,12 +86,13 @@ public class GuideActivity extends BaseActivity {
     private GuideResponse.DataBean.ListBean databean;
 
     private String isFirst = "";
+    private ShouYeDialog mSignDialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.act_welcome);
-
+//        initSDK();
 
 //
     }
@@ -152,8 +156,8 @@ public class GuideActivity extends BaseActivity {
 //
 //            }
 //        });
-
-
+//
+//
     }
 
 //    @Override
@@ -379,7 +383,7 @@ public class GuideActivity extends BaseActivity {
         }
         ClipboardManager cm = (ClipboardManager) getSystemService(CLIPBOARD_SERVICE);
         ClipData data = cm.getPrimaryClip();
-        String content = "";
+
         if (data != null) {
             ClipData.Item item = data.getItemAt(0);
             if (item != null && item.getText() != null)
@@ -395,44 +399,44 @@ public class GuideActivity extends BaseActivity {
     private void huoqujiantie(String content, final Activity context) {
         Map<String, String> map = new HashMap<>();
         map.put("keyword", content);
-        new Request<LinkBean>().request(RxJavaUtil.xApi().jiantie(map), "获取剪贴板数据", context, false, new Result<LinkBean>() {
-            @Override
-            public void get(LinkBean response) {
+        parsingPresenter.start("jiantie", "jiantie", "", map);
+//        new Request<LinkBean>().request(RxJavaUtil.xApi().jiantie(map), "获取剪贴板数据", context, false, new Result<LinkBean>() {
+//            @Override
+//            public void get(LinkBean response) {
 //                if (mSignDialog != null) {
 //                    mSignDialog.setMessage(response.getData().getTitle());
-//                }
-//                else
-//                mSignDialog = new ShouYeDialog(context, response.getData().getTitle());
+//                } else
+//                    mSignDialog = new ShouYeDialog(context, response.getData().getTitle());
 //                mSignDialog.show();
-
-                if (response.getData().getType() == 0) {
-                    startActivity(new Intent(GuideActivity.this, TransposeActivity.class).putExtra("content", content).putExtra("type", "0"));
-                } else {
-                    LinkDialog dialg = new LinkDialog(GuideActivity.this, response.getData().getTitle() + "", () -> {
-                        if (User.uid() < 0) {
-                            ActivityUtils.startLoginAcitivy(GuideActivity.this);
-                            return;
-                        }
-                        Map<String, String> map1 = new HashMap<>();
-                        map1.put("keyword", content);
-                        map1.put("type", response.getData().getType() + "");
-                        map1.put("user_id", User.uid() + "");
-                        new Request<LinkBean>().request(RxJavaUtil.xApi().chainLink(map1), "", context, true, new Result<LinkBean>() {
-                            @Override
-                            public void get(LinkBean response1) {
-                                EventBus.getDefault().post(response1);
-                                startActivity(new Intent(GuideActivity.this, LInkActivity.class));
-                            }
-                        });
-
-                    });
-                    dialg.show();
-
-
-                }
-
-            }
-        });
+////                jiantie LinkBean
+////                if (response.getData().getType() == 0) {
+////                    startActivity(new Intent(GuideActivity.this, TransposeActivity.class).putExtra("content", content).putExtra("type", "0"));
+////                } else {
+////                    LinkDialog dialg = new LinkDialog(GuideActivity.this, response.getData().getTitle() + "", () -> {
+////                        if (User.uid() < 0) {
+////                            ActivityUtils.startLoginAcitivy(GuideActivity.this);
+////                            return;
+////                        }
+////                        Map<String, String> map1 = new HashMap<>();
+////                        map1.put("keyword", content);
+////                        map1.put("type", response.getData().getType() + "");
+////                        map1.put("user_id", User.uid() + "");
+////                        new Request<LinkBean>().request(RxJavaUtil.xApi().chainLink(map1), "", context, true, new Result<LinkBean>() {
+////                            @Override
+////                            public void get(LinkBean response1) {
+////                                EventBus.getDefault().post(response1);
+////                                startActivity(new Intent(GuideActivity.this, LInkActivity.class));
+////                            }
+////                        });
+////
+////                    });
+////                    dialg.show();
+////
+////
+////                }
+//
+//            }
+//        });
     }
 
 
@@ -451,7 +455,7 @@ public class GuideActivity extends BaseActivity {
     }
 
 
-    @NotNull
+
     @Override
     public Activity initview() {
         mContext = this;
@@ -459,14 +463,48 @@ public class GuideActivity extends BaseActivity {
         SP.init(this);
         mImage = findViewById(R.id.image);
         isFirst = SP.getString("first", "");
-        initSDK();
+//        initSDK();
         initData();
         return this;
     }
 
     @Override
     public <T> void setData(@NotNull String type, T bean) {
+        if ("jiantie".equals(type) && bean != null) {
 
+            LinkBean response = (LinkBean) bean;
+            if (mSignDialog != null) {
+                mSignDialog.setMessage(response.getData().getTitle());
+            } else
+                mSignDialog = new ShouYeDialog(GuideActivity.this, response.getData().getTitle());
+            mSignDialog.show();
+//            if (response.getData().getType() == 0) {
+//                startActivity(new Intent(GuideActivity.this, TransposeActivity.class).putExtra("content", content).putExtra("type", "0"));
+//            } else {
+//                LinkDialog dialg = new LinkDialog(GuideActivity.this, response.getData().getTitle() + "", () -> {
+//                    if (User.uid() < 0) {
+//                        ActivityUtils.startLoginAcitivy(GuideActivity.this);
+//                        return;
+//                    }
+//                    Map<String, String> map1 = new HashMap<>();
+//                    map1.put("keyword", content);
+//                    map1.put("type", response.getData().getType() + "");
+//                    map1.put("user_id", User.uid() + "");
+//                    new Request<LinkBean>().request(RxJavaUtil.xApi().chainLink(map1), "", GuideActivity.this, true, new Result<LinkBean>() {
+//                        @Override
+//                        public void get(LinkBean response1) {
+//                            EventBus.getDefault().post(response1);
+//                            startActivity(new Intent(GuideActivity.this, LInkActivity.class));
+//                        }
+//                    });
+//
+//                });
+//                dialg.show();
+
+
+        }
+
+     else{
         GuideResponse response = null;
         if (bean != null) {
             response = (GuideResponse) bean;
@@ -499,6 +537,9 @@ public class GuideActivity extends BaseActivity {
 
 
     }
+
+
+}
 
     @Override
     public void onError(@NotNull String type, @NotNull Throwable error) {

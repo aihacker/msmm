@@ -243,8 +243,6 @@ public class HomeOneFragment extends BaseFragment implements Runnable, IShowData
     private String mNoticeUrl;
     private View view;
 
-    @SuppressLint("ClickableViewAccessibility")
-    @TargetApi(Build.VERSION_CODES.M)
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {

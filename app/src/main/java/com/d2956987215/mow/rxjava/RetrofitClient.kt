@@ -3,6 +3,7 @@ package com.example.qimiao.kotlinframework.network
 import android.content.Context
 import android.util.Log
 import com.d2956987215.mow.activity.APP
+import com.d2956987215.mow.rxjava.RxJavaUtil
 import com.d2956987215.mow.rxjava.TokenAuthenticator
 import com.huawei.hms.api.Api
 import com.umeng.socialize.common.SocializeConstants.BASE_URL
@@ -29,7 +30,9 @@ class RetrofitClient {
     var retrofit: Retrofit? = null
     val DEFAULT_TIMEOUT: Long = 5
     var type = 0
-    var BASE_URl="http://msapi.maishoumm.com/api/"
+    //    var BASE_URl="http://msapi.maishoumm.com/api/"
+    var BASE_URl = "http://106.15.53.235/api/"
+
 
     init {
         createRetrofit()
@@ -39,7 +42,7 @@ class RetrofitClient {
      * 创建retrofit对象
      */
     fun createRetrofit() {
-        if(retrofit!=null){
+        if (retrofit != null) {
             return
         }
         //缓存地址
@@ -72,7 +75,7 @@ class RetrofitClient {
                 .addConverterFactory(GsonConverterFactory.create())
                 .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
 
-                .baseUrl(BASE_URl)
+                .baseUrl(RxJavaUtil.URL)
                 .build()
     }
 

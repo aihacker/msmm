@@ -31,9 +31,12 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class RxJavaUtil {
     //TODO 需要更改成你自己的服务器请求地址并且需要引入gradle中rxJava的相应依赖（有标注）
-    public static final String HOST = "http://msapi.maishoumm.com/api/";
-    public static final String URL = "http://msapi.maishoumm.com/api/";
+    public static final String HOST = "http://106.15.53.235/api/";
+    public static final String URL = "http://106.15.53.235/api/";
     public static final String ImageHOST = "http://msapi.maishoumm.com/";
+//    http://msapi.maishoumm.com/api/
+
+
     private static XApi xApi;
     private static XApi xApi1;
     private static XApi xApi2;

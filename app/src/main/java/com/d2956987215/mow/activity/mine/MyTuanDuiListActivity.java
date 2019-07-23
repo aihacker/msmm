@@ -113,8 +113,11 @@ public class MyTuanDuiListActivity extends BaseActivity implements SwipeRefreshL
                         hotAdapter.notifyDataSetChanged();
 
                     } else {
-                        hotAdapter.loadMoreComplete();
-                        hotAdapter.loadMoreEnd();
+                        if(hotAdapter!=null){
+                            hotAdapter.loadMoreComplete();
+                            hotAdapter.loadMoreEnd();
+                        }
+
                     }
 
                 }
@@ -187,12 +190,9 @@ public class MyTuanDuiListActivity extends BaseActivity implements SwipeRefreshL
         }
 
 
-        hotAdapter.setOnLoadMoreListener(new BaseQuickAdapter.RequestLoadMoreListener() {
-            @Override
-            public void onLoadMoreRequested() {
-                p++;
-                huoqu();
-            }
+        hotAdapter.setOnLoadMoreListener(() -> {
+            p++;
+            huoqu();
         }, recycler_hot_product);
 
 

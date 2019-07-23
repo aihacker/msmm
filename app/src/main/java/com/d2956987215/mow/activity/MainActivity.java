@@ -49,15 +49,20 @@ import com.d2956987215.mow.activity.home.JuhuaSuanActivity;
 import com.d2956987215.mow.activity.home.OrdinaryWebViewActivity;
 import com.d2956987215.mow.activity.home.QiangGouListActivity;
 import com.d2956987215.mow.activity.home.TaoBaoDetailActivity;
+import com.d2956987215.mow.activity.home.TransposeActivity;
 import com.d2956987215.mow.activity.kotlin.BaseActivity;
 import com.d2956987215.mow.activity.luntan.LunTanFragment;
 import com.d2956987215.mow.activity.mine.BanZhangActivity;
 import com.d2956987215.mow.activity.mine.MemberCenterActivity;
 import com.d2956987215.mow.activity.mine.MineFragment;
 import com.d2956987215.mow.activity.mine.MyYaoQingActivity;
+import com.d2956987215.mow.activity.mine.SearchActivity;
 import com.d2956987215.mow.activity.product.ProductFragment;
 import com.d2956987215.mow.bean.LinkBean;
+import com.d2956987215.mow.bean.transposeBean;
 import com.d2956987215.mow.constant.Const;
+import com.d2956987215.mow.dialog.LinkDialog;
+import com.d2956987215.mow.dialog.MainSelectDialog;
 import com.d2956987215.mow.dialog.ShouYeDialog;
 import com.d2956987215.mow.dialog.UpdateIDDialog;
 import com.d2956987215.mow.eventbus.AnimBottomBar;
@@ -78,6 +83,8 @@ import com.d2956987215.mow.rxjava.response.GuideResponse;
 import com.d2956987215.mow.rxjava.response.RulesResponse;
 import com.d2956987215.mow.rxjava.response.UpdateResponse;
 import com.d2956987215.mow.util.ActivityManager;
+import com.d2956987215.mow.util.ActivityUtils;
+import com.d2956987215.mow.util.AppFrontBackHelper;
 import com.d2956987215.mow.util.MyLog;
 import com.d2956987215.mow.util.NavigationUtil;
 import com.d2956987215.mow.util.PermissionUtils;
@@ -240,7 +247,7 @@ public class MainActivity extends BaseActivity {
             }
         });
 
-        mHandler.sendEmptyMessageDelayed(3, 1500);
+//        mHandler.sendEmptyMessageDelayed(3, 1500);
 //        huoqufuzhi();
     }
 
@@ -271,9 +278,9 @@ public class MainActivity extends BaseActivity {
                 }
                 switchFragment(homeFragment, "HomeFragment");
             }
-            if (intent.getBooleanExtra("isRefreshData", false)) {
-                EventBus.getDefault().post(new RefreshListData());
-            }
+//            if (intent.getBooleanExtra("isRefreshData", false)) {
+//                EventBus.getDefault().post(new RefreshListData());
+//            }
         }
     }
 
@@ -548,7 +555,7 @@ public class MainActivity extends BaseActivity {
 
         try {
 
-            ClipboardManager cm = (ClipboardManager) getSystemService(CLIPBOARD_SERVICE);
+            ClipboardManager cm = (ClipboardManager) APP.getApplication().getSystemService(CLIPBOARD_SERVICE);
             ClipData data = cm.getPrimaryClip();
             String content = "";
             if (data != null) {
@@ -579,68 +586,50 @@ public class MainActivity extends BaseActivity {
     private void huoqujiantie(String content) {
         Map<String, String> map = new HashMap<>();
         map.put("keyword", content);
-        new Request<LinkBean>().request(RxJavaUtil.xApi().jiantie(map), "获取剪贴板数据", getContext(), false, new Result<LinkBean>() {
-            @Override
-            public void get(LinkBean response) {
-// 获取系统剪贴板
-//                ClipboardManager clipboard = (ClipboardManager) getSystemService(Context.CLIPBOARD_SERVICE);
-
-// 创建一个剪贴数据集，包含一个普通文本数据条目（需要复制的数据）
-//                ClipData clipData = ClipData.newPlainText(null, null);
-
-// 把数据集设置（复制）到剪贴板
-//                clipboard.setPrimaryClip(clipData);
-//                if (response.getData().getType() == 0) {
-//                    startActivity(new Intent(MainActivity.this, TransposeActivity.class).putExtra("content", content).putExtra("type", "0"));
+        parsingPresenter.start("jiantie", "jiantie", "", map);
+//        new Request<LinkBean>().request(RxJavaUtil.xApi().jiantie(map), "获取剪贴板数据", getContext(), false, new Result<LinkBean>() {
+//            @Override
+//            public void get(LinkBean response) {
+//
+//
+//                if (mSignDialog != null) {
+//                    mSignDialog.setMessage(response.getData().getTitle());
 //
 //                } else {
-//                    if (mSignDialog != null) {
-//                        mSignDialog.setMessage(response.getData().getTitle());
-//
-//                    } else {
-//                        mSignDialog = new ShouYeDialog(ActivityUtils.getTopActivity(), response.getData().getTitle());
-//                        mSignDialog.show();
-//                    }
+//                    mSignDialog = new ShouYeDialog(MainActivity.this, response.getData().getTitle());
+//                    mSignDialog.show();
 //                }
-
-                if (mSignDialog != null) {
-                    mSignDialog.setMessage(response.getData().getTitle());
-
-                } else {
-                    mSignDialog = new ShouYeDialog(MainActivity.this, response.getData().getTitle());
-                    mSignDialog.show();
-                }
-
-
-//                if (response.getData().getType() == -1) {
-//                    startActivity(new Intent(MainActivity.this, TransposeActivity.class).putExtra("content", content).putExtra("type", "0"));
-//                } else {
-//                    LinkDialog dialog = new LinkDialog(MainActivity.this, response.getData().getTitle() + "", () -> {
-//                        if (User.uid() < 0) {
-//                            ActivityUtils.startLoginAcitivy(MainActivity.this);
-//                            return;
-//                        }
-//                        Map<String, String> map1 = new HashMap<>();
-//                        map1.put("keyword", content);
-//                        map1.put("type", response.getData().getType() + "");
-//                        map1.put("user_id", User.uid() + "");
-//                        new Request<LinkBean>().request(RxJavaUtil.xApi().chainLink(map1), "", MainActivity.this, true, new Result<LinkBean>() {
-//                            @Override
-//                            public void get(LinkBean response1) {
-//                                EventBus.getDefault().postSticky(response1);
-//                                startActivity(new Intent(MainActivity.this, LInkActivity.class));
-//                            }
-//                        });
-//
-//                    });
-//                    dialog.show();
 //
 //
-//                }
-
-
-            }
-        });
+////                if (response.getData().getType() == -1) {
+////                    startActivity(new Intent(MainActivity.this, TransposeActivity.class).putExtra("content", content).putExtra("type", "0"));
+////                } else {
+////                    LinkDialog dialog = new LinkDialog(MainActivity.this, response.getData().getTitle() + "", () -> {
+////                        if (User.uid() < 0) {
+////                            ActivityUtils.startLoginAcitivy(MainActivity.this);
+////                            return;
+////                        }
+////                        Map<String, String> map1 = new HashMap<>();
+////                        map1.put("keyword", content);
+////                        map1.put("type", response.getData().getType() + "");
+////                        map1.put("user_id", User.uid() + "");
+////                        new Request<LinkBean>().request(RxJavaUtil.xApi().chainLink(map1), "", MainActivity.this, true, new Result<LinkBean>() {
+////                            @Override
+////                            public void get(LinkBean response1) {
+////                                EventBus.getDefault().postSticky(response1);
+////                                startActivity(new Intent(MainActivity.this, LInkActivity.class));
+////                            }
+////                        });
+////
+////                    });
+////                    dialog.show();
+////
+////
+////                }
+//
+//
+//            }
+//        });
 
 
     }
@@ -665,13 +654,76 @@ public class MainActivity extends BaseActivity {
     @NotNull
     @Override
     public Activity initview() {
-        return null;
+        return this;
     }
+
+
+    @Subscribe(threadMode = ThreadMode.MAIN, sticky = true)
+    public void onEventMainThread(transposeBean bean) {
+//        startActivity(new Intent(MainActivity.this, TransposeActivity.class).putExtra("content", bean.getContent()).putExtra("type", "0"));
+
+
+
+//        MainSelectDialog mainSelectDialog = new MainSelectDialog(this, id -> {
+//            Intent intent = new Intent(this, SearchActivity.class);
+//            String type = "1";
+//            if (id == 1) {
+//                type = "1";
+//            } else if (id == 2) {
+//                type = "2";
+//            } else if (id == 3) {
+//                type = "3";
+//            } else {
+//                return;
+//            }
+//            intent.putExtra("type", type);
+//            intent.putExtra("keyword",bean.getContent());
+//            startActivity(intent);
+//        });
+//        mainSelectDialog.show();
+
+    }
+
 
     @Override
     public <T> void setData(@NotNull String type, T bean) {
         if ("IsNeedRecord" == type) {
             toDetail(databean.getDirectType(), databean.getUrl(), databean.getTitle(), databean.getQuan_id(), databean.getAid());
+        } else if ("jiantie".equals(type) && bean != null) {
+
+            LinkBean response = (LinkBean) bean;
+//            if (mSignDialog != null) {
+//                mSignDialog.setMessage(response.getData().getTitle());
+//            } else {
+//                mSignDialog = new ShouYeDialog(MainActivity.this, response.getData().getTitle());
+//                mSignDialog.show();
+//            }
+
+
+//            if (response.getData().getType() == 0) {
+//                startActivity(new Intent(GuideActivity.this, TransposeActivity.class).putExtra("content", content).putExtra("type", "0"));
+//            } else {
+//                LinkDialog dialg = new LinkDialog(GuideActivity.this, response.getData().getTitle() + "", () -> {
+//                    if (User.uid() < 0) {
+//                        ActivityUtils.startLoginAcitivy(GuideActivity.this);
+//                        return;
+//                    }
+//                    Map<String, String> map1 = new HashMap<>();
+//                    map1.put("keyword", content);
+//                    map1.put("type", response.getData().getType() + "");
+//                    map1.put("user_id", User.uid() + "");
+//                    new Request<LinkBean>().request(RxJavaUtil.xApi().chainLink(map1), "", GuideActivity.this, true, new Result<LinkBean>() {
+//                        @Override
+//                        public void get(LinkBean response1) {
+//                            EventBus.getDefault().post(response1);
+//                            startActivity(new Intent(GuideActivity.this, LInkActivity.class));
+//                        }
+//                    });
+//
+//                });
+//                dialg.show();
+//
+//
         }
 
 
@@ -679,7 +731,7 @@ public class MainActivity extends BaseActivity {
 
     @Override
     public void onError(@NotNull String type, @NotNull Throwable error) {
-        Log.e("error","error--"+error.getMessage().toString());
+        Log.e("error", "error--" + error.getMessage().toString());
 
     }
 
@@ -981,6 +1033,33 @@ public class MainActivity extends BaseActivity {
 
         Bugly.init(getApplicationContext(), "f2ae68fe62", false);
         um();
+
+
+//        AppFrontBackHelper helper = new AppFrontBackHelper();
+//        helper.register(APP.getApplication(), new AppFrontBackHelper.OnAppStatusListener() {
+//            @Override
+//            public void onFront(Activity context) {
+//                LogUtils.e("context");
+////                mContext = context;
+//                //应用切到前台处理
+////                huoqufuzhi();
+////                EventBus.getDefault().post(new SearchEvent());
+////                if (context.getComponentName().getClassName().)
+//                if (context != null && !context.getClass().equals(GuideActivity.class))
+//                    huoqufuzhi();
+//            }
+//
+//            @Override
+//            public void onBack() {
+//                //应用切到后台处理
+////                EventBus.getDefault().post(new SearchDialogHideEvent());
+//                if (mSignDialog != null) {
+//                    mSignDialog.dismiss();
+//                    mSignDialog = null;
+//                }
+//
+//            }
+//        });
 
 
         // MobSDK.init(this);

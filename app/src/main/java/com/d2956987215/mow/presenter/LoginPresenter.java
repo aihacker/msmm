@@ -95,7 +95,7 @@ public class LoginPresenter {
                 SP.putString("deadline", response.getRetval().getDeadline());
                 //   SP.putString("phone", response.getRetval().getToken());
                 Intent intent1 = new Intent(activity, MainActivity.class);
-                intent1.putExtra("isRefreshData", true);
+                intent1.putExtra("isRefreshData", false);
                 activity.startActivity(intent1);
                 activity.finish();
             }

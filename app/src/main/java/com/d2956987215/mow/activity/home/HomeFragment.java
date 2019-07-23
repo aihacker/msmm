@@ -105,7 +105,7 @@ public class HomeFragment extends Fragment implements IShowData {
     //    @BindView(R.id.view_circle)
     TextView mViewCircle;
     private Activity mContext;
-//    Unbinder unbinder;
+    Unbinder unbinder;
 
 
     private List<Fragment> fragments = new ArrayList<>();
@@ -120,7 +120,7 @@ public class HomeFragment extends Fragment implements IShowData {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_home, container, false);
         mContext=this.getActivity();
-//        unbinder = ButterKnife.bind(this, view);
+        unbinder = ButterKnife.bind(this, view);
         findView(view);
         EventBus.getDefault().register(this);
         huoqutitile();

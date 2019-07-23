@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?><!-- 闹铃起闹时弹出对话框的布局文件 -->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/dialog_alarmAlert"
-    android:layout_width="match_parent"
+    android:layout_width="266dp"
     android:layout_height="wrap_content"
     android:layout_marginLeft="55dp"
     android:layout_marginRight="54dp"
+    android:layout_gravity="center"
     android:background="@drawable/circle"
     android:layout_margin="-2dp"
     android:orientation="vertical">
@@ -27,6 +28,7 @@
     </LinearLayout>
 
     <TextView
+        android:id="@+id/tv_ms"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:layout_gravity="center|left"

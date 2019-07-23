@@ -54,4 +54,9 @@ class HomeModel {
         return apiService?.authTaoBaoNotice(map,data[0].toString()) as  Observable<T>
     }
 
+    fun <T :BaseResponse> jiantie(url: String?, map: HashMap<String, String>?, vararg value: Any?): Observable<T>? {
+        return apiService?.jiantie(map) as  Observable<T>
+    }
+
+
 }

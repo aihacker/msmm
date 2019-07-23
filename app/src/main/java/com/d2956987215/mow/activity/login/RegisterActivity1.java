@@ -54,7 +54,7 @@ public class RegisterActivity1 extends BaseActivity implements TextWatcher {
     Button bt_register;
     private long time;
     private CountDownTimer countDownTimer;
-    private final int timeInterval=600;//监听et_pass改动,若timeInterval时间内没改动则去校验邀请码
+    private final int timeInterval = 600;//监听et_pass改动,若timeInterval时间内没改动则去校验邀请码
     private boolean countDownTimerStopStatus;//true:停止  false：运行
 
 
@@ -66,7 +66,7 @@ public class RegisterActivity1 extends BaseActivity implements TextWatcher {
         super.onCreate(savedInstanceState);
         presenter = new LoginPresenter(this);
         et_pass.addTextChangedListener(this);
-        countDownTimer=new CountDownTimer(timeInterval,1000) {
+        countDownTimer = new CountDownTimer(timeInterval, 1000) {
             @Override
             public void onTick(long millisUntilFinished) {
 
@@ -75,7 +75,7 @@ public class RegisterActivity1 extends BaseActivity implements TextWatcher {
             @Override
             public void onFinish() {
                 saoyisao(et_pass.getText().toString());
-                countDownTimerStopStatus=true;
+                countDownTimerStopStatus = true;
             }
         };
     }
@@ -112,13 +112,13 @@ public class RegisterActivity1 extends BaseActivity implements TextWatcher {
         bt_register.setClickable(false);
         rl_invite_info.setVisibility(View.INVISIBLE);
         if (!TextUtils.isEmpty(et_pass.getText().toString().trim()) && et_pass.getText().length() > 4) {
-           if(!countDownTimerStopStatus){
-               countDownTimer.cancel();
-               countDownTimerStopStatus=true;
-           }
-           countDownTimer.start();
-           countDownTimerStopStatus=false;
-           time=System.currentTimeMillis();
+            if (!countDownTimerStopStatus) {
+                countDownTimer.cancel();
+                countDownTimerStopStatus = true;
+            }
+            countDownTimer.start();
+            countDownTimerStopStatus = false;
+            time = System.currentTimeMillis();
 
         } else {
             bt_register.setBackground(getResources().getDrawable(R.drawable.bg_login));
@@ -136,9 +136,9 @@ public class RegisterActivity1 extends BaseActivity implements TextWatcher {
                     ToastUtil.show(this, "请输入邀请码");
                     return;
                 }
-                Intent intent = new Intent(this, LoginPhoneActivity1.class);
-//                Intent intent = new Intent(this, LoginPhoneNewActivity.class);
-                intent.putExtra("yaoqingma",et_pass.getText().toString().trim());
+//                Intent intent = new Intent(this, LoginPhoneActivity1.class);
+                Intent intent = new Intent(this, LoginPhoneNewActivity.class);
+                intent.putExtra("yaoqingma", et_pass.getText().toString().trim());
                 startActivity(intent);
                 finish();
 

@@ -5,6 +5,7 @@ import android.app.Application;
 import android.content.ClipData;
 import android.content.ClipboardManager;
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Build;
 import android.os.StrictMode;
@@ -17,17 +18,25 @@ import com.alibaba.baichuan.android.trade.callback.AlibcTradeInitCallback;
 import com.blankj.utilcode.util.LogUtils;
 import com.blankj.utilcode.util.StringUtils;
 import com.d2956987215.mow.R;
+import com.d2956987215.mow.activity.home.LInkActivity;
+import com.d2956987215.mow.activity.home.TransposeActivity;
+import com.d2956987215.mow.activity.mine.SearchActivity;
 import com.d2956987215.mow.bean.LinkBean;
+import com.d2956987215.mow.bean.transposeBean;
+import com.d2956987215.mow.dialog.LinkDialog;
+import com.d2956987215.mow.dialog.MainSelectDialog;
 import com.d2956987215.mow.dialog.ShouYeDialog;
 import com.d2956987215.mow.imageloader.GlideImageLoader;
 import com.d2956987215.mow.rxjava.Request;
 import com.d2956987215.mow.rxjava.Result;
 import com.d2956987215.mow.rxjava.RxJavaUtil;
 import com.d2956987215.mow.rxjava.response.AdverResponse;
+import com.d2956987215.mow.util.ActivityUtils;
 import com.d2956987215.mow.util.AppFrontBackHelper;
 import com.d2956987215.mow.util.DynamicTimeFormat;
 import com.d2956987215.mow.util.MyLog;
 import com.d2956987215.mow.util.SP;
+import com.d2956987215.mow.util.User;
 import com.scwang.smartrefresh.layout.SmartRefreshLayout;
 import com.scwang.smartrefresh.layout.api.DefaultRefreshHeaderCreater;
 import com.scwang.smartrefresh.layout.api.RefreshHeader;
@@ -37,6 +46,8 @@ import com.tencent.bugly.Bugly;
 import com.umeng.commonsdk.UMConfigure;
 import com.umeng.socialize.PlatformConfig;
 import com.umeng.socialize.UMShareAPI;
+
+import org.greenrobot.eventbus.EventBus;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
@@ -115,31 +126,31 @@ public class APP extends Application {
 //        Bugly.init(getApplicationContext(), "f2ae68fe62", false);
 //
 //
-//        AppFrontBackHelper helper = new AppFrontBackHelper();
-//        helper.register(APP.this, new AppFrontBackHelper.OnAppStatusListener() {
-//            @Override
-//            public void onFront(Activity context) {
-//                LogUtils.e("context");
-////                mContext = context;
-//                //应用切到前台处理
-////                huoqufuzhi();
-////                EventBus.getDefault().post(new SearchEvent());
-////                if (context.getComponentName().getClassName().)
-//                if (!context.getClass().equals(GuideActivity.class))
-//                    huoqufuzhi(context);
-//            }
-//
-//            @Override
-//            public void onBack() {
-//                //应用切到后台处理
-////                EventBus.getDefault().post(new SearchDialogHideEvent());
-//                if (mSignDialog != null) {
-//                    mSignDialog.dismiss();
-//                    mSignDialog = null;
-//                }
-//
-//            }
-//        });
+        AppFrontBackHelper helper = new AppFrontBackHelper();
+        helper.register(APP.this, new AppFrontBackHelper.OnAppStatusListener() {
+            @Override
+            public void onFront(Activity context) {
+                LogUtils.e("context");
+//                mContext = context;
+                //应用切到前台处理
+//                huoqufuzhi();
+//                EventBus.getDefault().post(new SearchEvent());
+//                if (context.getComponentName().getClassName().)
+                if (!context.getClass().equals(GuideActivity.class))
+                    huoqufuzhi(context);
+            }
+
+            @Override
+            public void onBack() {
+                //应用切到后台处理
+//                EventBus.getDefault().post(new SearchDialogHideEvent());
+                if (mSignDialog != null) {
+                    mSignDialog.dismiss();
+                    mSignDialog = null;
+                }
+
+            }
+        });
 //
 //
 //        um();
@@ -221,7 +232,7 @@ public class APP extends Application {
         String content = "";
         if (data != null) {
             ClipData.Item item = data.getItemAt(0);
-            if (item != null&& item.getText()!=null)
+            if (item != null && item.getText() != null)
                 content = item.getText().toString();
         }
         if (!StringUtils.isEmpty(content)) {
@@ -241,9 +252,27 @@ public class APP extends Application {
 //                    mSignDialog.setMessage(response.getData().getTitle());
 //                }
 //                else
-                mSignDialog = new ShouYeDialog(context, response.getData().getTitle());
-                mSignDialog.show();
+//                mSignDialog = new ShouYeDialog(context, response.getData().getTitle());
+//                mSignDialog.show();
 
+
+                if (response.getData().getIsLink() == 0) {
+//                    startActivity(new Intent(context, TransposeActivity.class).putExtra("content", content).putExtra("type", "0"));
+//                    EventBus.getDefault().postSticky(new transposeBean(content,"0"));
+
+
+                    MainSelectDialog mainSelectDialog = new MainSelectDialog(context,content, id -> {
+
+                    });
+                    mainSelectDialog.show();
+
+                } else {
+                    LinkDialog dialg = new LinkDialog(context, response,content, () -> {
+
+                    });
+                    dialg.show();
+
+                }
             }
         });
 

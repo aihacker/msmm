@@ -314,9 +314,12 @@ public class MyOrderListActivity extends BaseActivity implements SwipeRefreshLay
             public void get(MyOrderList response) {
                 KeyboardUtils.hideSoftInput(MyOrderListActivity.this);
                 refreshLayout.setRefreshing(false);
+                if(response.getData()!=null){
+                    mTypeList = response.getData().getTypes();
+                }
 
                 if (response.getData().getData() instanceof List && ((List) response.getData().getData()).size() > 0) {
-                    mTypeList = response.getData().getTypes();
+
                     statusLayoutManager.showSuccessLayout();
                     List<MyOrderList.DataBeanX.DataBean> list = response.getData().getData();
                     if (list != null && list.size() > 0) {

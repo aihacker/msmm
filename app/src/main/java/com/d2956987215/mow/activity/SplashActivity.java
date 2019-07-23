@@ -185,7 +185,7 @@ public class SplashActivity extends BaseActivity {
         map.put("openSid", AlibcLogin.getInstance().getSession().openSid);
         map.put("openId", AlibcLogin.getInstance().getSession().openId);
         map.put("nick", AlibcLogin.getInstance().getSession().nick);
-        EventBus.getDefault().post(new RefreshListData());
+//        EventBus.getDefault().post(new RefreshListData());
         new Request<LoginResponse>().request(RxJavaUtil.xApi().taobaologin(map), "淘宝登陆", SplashActivity.this, false, new Result<LoginResponse>() {
             @Override
             public void get(LoginResponse response) {
@@ -203,7 +203,8 @@ public class SplashActivity extends BaseActivity {
                     mHandler.sendMessage(mHandler.obtainMessage(MSG_SET_ALIAS, SPUtils.getInstance().getString(Const.USER_ID, response.getRetval().getUid() + "")));
                     intent1 = new Intent(SplashActivity.this, MainActivity.class);
                 }
-//                intent1.putExtra("isRefreshData", true);
+                intent1.putExtra("isRefreshData", false);
+                intent1.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(intent1);
                 finish();
             }
