@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_white10"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:paddingBottom="15dp"
+    android:paddingLeft="35dp"
+    android:paddingRight="35dp">
+
+    <com.d2956987215.mow.widgets.GifView
+        android:id="@+id/gifview"
+        android:layout_width="95dp"
+        android:layout_height="93dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="13dp"
+        android:text="正在为您搜券中"
+        android:textColor="#333333"
+        android:textSize="18sp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="9dp"
+        android:text="大约需要1-10分钟，请等待"
+        android:textColor="#333333"
+        android:textSize="12sp" />
+
+
+</LinearLayout>

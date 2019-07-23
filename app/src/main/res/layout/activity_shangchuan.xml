@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    style="@style/transparent_statusbar_fit"
+    android:orientation="vertical">
+
+    <include layout="@layout/include_header" />
+
+
+    <ImageView
+        android:id="@+id/iv_erweima"
+        android:layout_width="125dp"
+        android:layout_height="125dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="30dp"
+        android:src="@mipmap/me_img_erweima" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="15dp"
+        android:text="点击修改二维码"
+        android:textColor="#ff999999"
+        android:textSize="12sp" />
+
+    <Button
+        android:id="@+id/bt_next"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="45dp"
+        android:background="@drawable/bg_loginred"
+        android:text="确认修改"
+        android:textColor="@color/white"
+        android:textSize="14sp" />
+</LinearLayout>

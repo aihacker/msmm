@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="50dp"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <CheckBox
+        android:id="@+id/ct_zhiding"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="15dp"
+        android:background="@drawable/checkbox_quxiao_selector"
+        android:button="@null" />
+
+    <TextView
+        android:id="@+id/tv_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="15dp"
+        android:layout_toRightOf="@+id/ct_zhiding"
+        android:text="王小红"
+        android:textColor="#ff333333"
+        android:textSize="14sp" />
+
+    <TextView
+        android:id="@+id/tv_phone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="15dp"
+        android:layout_toRightOf="@+id/tv_name"
+        android:text="12345678901"
+        android:textColor="#ff333333"
+        android:textSize="14sp" />
+
+    <TextView
+        android:id="@+id/tv_yaoqing"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="15dp"
+        android:background="@mipmap/share_btn_yaoqing"
+        android:gravity="center"
+        android:paddingBottom="9dp"
+        android:text="邀请"
+        android:textColor="#ffffffff"
+        android:textSize="13sp" />
+
+
+</RelativeLayout>

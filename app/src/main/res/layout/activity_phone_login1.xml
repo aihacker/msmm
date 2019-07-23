@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    style="@style/transparent_statusbar_fit"
+    android:background="@color/white"
+    android:orientation="vertical"
+    tools:context="com.d2956987215.mow.activity.login.LoginActivity">
+
+    <include layout="@layout/include_header" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="38dp"
+        android:layout_marginTop="30dp"
+        android:text="注册"
+        android:textColor="#666666"
+        android:textSize="26dp" />
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="34dp"
+        android:layout_marginEnd="35dp"
+        android:layout_marginStart="35dp"
+        android:paddingLeft="8dp"
+        android:layout_marginTop="35dp">
+        <TextView
+            android:id="@+id/tv_phone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="中国（+86）"
+            android:layout_centerVertical="true"
+            android:textColor="#ff333333"
+            android:textSize="13sp"
+            />
+
+        <EditText
+            android:id="@+id/et_account"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@+id/tv_phone"
+            android:layout_width="match_parent"
+            android:layout_height="34dp"
+            android:layout_gravity="center"
+            android:background="@null"
+            android:drawablePadding="5dp"
+            android:hint="@string/input_user_phone"
+            android:maxLines="1"
+            android:paddingLeft="8dp"
+            android:paddingStart="8dp"
+            android:text=""
+            android:textColorHint="#cbc9c9"
+            android:textSize="13sp" />
+
+
+    </RelativeLayout>
+
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginEnd="35dp"
+        android:layout_marginStart="35dp"
+        android:layout_marginTop="5dp"
+        android:background="@color/line" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="35dp"
+        android:layout_marginStart="35dp"
+        android:layout_marginTop="15dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/et_pass"
+            android:layout_width="match_parent"
+            android:layout_height="34dp"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:background="@null"
+            android:drawablePadding="5dp"
+            android:hint="请输入验证码"
+            android:inputType="number"
+            android:maxLines="1"
+            android:paddingLeft="8dp"
+            android:paddingStart="8dp"
+            android:text=""
+            android:textColorHint="#cbc9c9"
+            android:textSize="13sp" />
+
+        <TextView
+            android:id="@+id/tv_yanzhengma"
+            android:layout_width="wrap_content"
+            android:layout_height="26dp"
+            android:layout_alignParentRight="true"
+            android:background="@drawable/bg_red"
+            android:gravity="center"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"
+            android:text="获取验证码"
+            android:textColor="#FD4964"
+            android:textSize="13dp" />
+    </LinearLayout>
+
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginEnd="35dp"
+        android:layout_marginStart="35dp"
+        android:layout_marginTop="5dp"
+        android:background="@color/line" />
+
+    <Button
+        android:id="@+id/bt_login"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_gravity="center"
+        android:layout_marginEnd="35dp"
+        android:layout_marginStart="35dp"
+        android:layout_marginTop="60dp"
+        android:background="@drawable/bg_login"
+        android:text="注册"
+        android:textColor="@color/white"
+        android:textSize="15sp" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/tv_duanxin_login"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="35dp"
+            android:paddingBottom="10dp"
+            android:paddingEnd="10dp"
+            android:paddingTop="10dp"
+            android:text="密码登录"
+            android:textColor="@color/eight"
+            android:textSize="10sp" />
+
+        <TextView
+            android:id="@+id/tv_forget_pass"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="35dp"
+            android:paddingBottom="10dp"
+            android:paddingEnd="10dp"
+            android:paddingTop="10dp"
+            android:text="@string/forget_pass"
+            android:textColor="@color/hot_product"
+            android:textSize="10sp"
+            android:visibility="gone" />
+
+        <LinearLayout
+            android:id="@+id/ll_register"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="35dp"
+            android:paddingBottom="10dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="@string/no_account"
+                android:textColor="@color/nine"
+                android:textSize="10sp"
+                android:visibility="gone" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="@string/register_now"
+                android:textColor="@color/hot_product"
+                android:textSize="10sp" />
+        </LinearLayout>
+    </RelativeLayout>
+
+
+</LinearLayout>

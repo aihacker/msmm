@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?><!-- 闹铃起闹时弹出对话框的布局文件 -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/dialog_alarmAlert"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="40dp"
+    android:layout_marginRight="40dp"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="220dp"
+        android:layout_gravity="center"
+        android:background="@drawable/bg_whrite"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/iv_regist_iv"
+            android:layout_width="143dp"
+            android:layout_height="85dp"
+            android:layout_centerHorizontal="true"
+            android:padding="16dp"
+            android:src="@mipmap/icon_regist" />
+
+
+        <TextView
+            android:id="@+id/tv_01"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="尚未注册"
+            android:layout_centerHorizontal="true"
+            android:textColor="#ff333333"
+            android:textSize="17sp"
+            android:layout_below="@id/iv_regist_iv"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="您还没有注册哦，快去注册吧！"
+            android:textColor="#ff333333"
+            android:layout_centerHorizontal="true"
+            android:textSize="13sp"
+            android:layout_below="@id/tv_01"
+            android:padding="10dp"
+            />
+
+        <LinearLayout
+            android:id="@+id/la_di"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_alignParentBottom="true"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tv_quxiao"
+                style="@style/Font14_black"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="取消"
+                android:background="#fff0f0f0"
+                android:textColor="#ff999999"
+                android:textSize="17sp" />
+
+            <View
+                android:layout_width="0.5dp"
+                android:layout_height="match_parent"
+                android:background="@color/line" />
+
+
+            <TextView
+                android:id="@+id/tv_queding"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="注册"
+                android:textColor="@color/white"
+                android:background="#ffff528b"
+                android:textSize="17dp" />
+
+        </LinearLayout>
+
+
+    </RelativeLayout>
+
+
+</LinearLayout>
+
+
+
+
+
+
+
+
+
+
+
+
+

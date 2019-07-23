@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="SaleProgressView">
+        <attr name="sideColor" format="color" />
+        <attr name="textColor" format="color" />
+        <attr name="sideWidth" format="dimension" />
+        <attr name="overText" format="string" />
+        <attr name="nearOverText" format="string" />
+        <attr name="textSize" format="dimension" />
+        <attr name="isNeedAnim" format="boolean" />
+    </declare-styleable>
+
+    <declare-styleable name="CheckItem">
+        <attr name="title" format="string" />
+        <attr name="titleSize" format="integer" />
+        <attr name="titleColor" format="color" />
+        <attr name="desc" format="string" />
+        <attr name="descSize" format="integer" />
+        <attr name="descColor" format="color" />
+        <attr name="IsCheck" format="boolean" />
+        <attr name="showDesc" format="boolean" />
+        <attr name="Icon" format="reference" />
+    </declare-styleable>
+
+    <declare-styleable name="CustomTheme">
+        <attr name="gifViewStyle" format="reference" />
+    </declare-styleable>
+
+    <declare-styleable name="GifView">
+        <attr name="gif" format="reference" />
+        <attr name="paused" format="boolean" />
+    </declare-styleable>
+
+    <declare-styleable name="VerifyEditText">
+        <!--输入框数量-->
+        <attr name="inputCount" format="integer" />
+        <!--输入框间距-->
+        <attr name="inputSpace" format="dimension" />
+        <!--下划线厚度-->
+        <attr name="underlineHeight" format="dimension" />
+        <!--输入框文本大小-->
+        <attr name="mTextSize" format="dimension" />
+        <!--下划线选中的颜色-->
+        <attr name="focusColor" format="color" />
+        <!--下划线未选中的颜色-->
+        <attr name="defaultColor" format="color" />
+        <!--下划线距文本的距离-->
+        <attr name="underlineSpace" format="dimension" />
+        <!--光标-->
+        <attr name="cursorDrawable" format="reference" />
+    </declare-styleable>
+
+</resources>

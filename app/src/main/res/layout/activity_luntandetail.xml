@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    style="@style/transparent_statusbar_fit"
+    android:orientation="vertical">
+
+    <include
+        android:id="@+id/la_1"
+        layout="@layout/include_header" />
+
+
+    <com.scwang.smartrefresh.layout.SmartRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/refresh_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/la_1">
+
+        <com.scwang.smartrefresh.layout.header.ClassicsHeader
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+
+        <android.support.v4.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="60dp"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:id="@+id/layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/head_img"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_alignTop="@+id/name"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="10dp"
+                        android:src="@mipmap/head" />
+
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <TextView
+                            android:id="@+id/name"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentTop="true"
+                            android:layout_alignStart="@+id/trends_date"
+                            android:layout_marginTop="4dp"
+                            android:ellipsize="end"
+                            android:gravity="center"
+                            android:singleLine="true"
+                            android:text=""
+                            android:textColor="@color/hot_product"
+                            android:textSize="13dp" />
+
+
+                        <TextView
+                            android:id="@+id/trends_date"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentBottom="true"
+                            android:layout_alignParentStart="true"
+                            android:layout_below="@+id/name"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginStart="10dp"
+                            android:gravity="center"
+                            android:text=""
+                            android:textColor="@color/dark"
+                            android:textSize="12dp" />
+
+
+                    </RelativeLayout>
+                </LinearLayout>
+
+
+                <TextView
+                    android:id="@+id/title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/layout"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="10dp"
+                    android:text=""
+                    android:textColor="@color/dark"
+                    android:textSize="12dp" />
+
+                <RelativeLayout
+                    android:id="@+id/rl_buju"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/title"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
+                    android:layout_marginTop="15dp">
+
+                    <com.d2956987215.mow.widgets.MultiImageView
+                        android:id="@+id/multi_image"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="@dimen/dp_10" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:layout_below="@+id/rl_buju">
+
+                    <include layout="@layout/divider_view_padding_10" />
+
+                    <TextView
+                        android:id="@+id/tv_pinglun"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginRight="10dp"
+                        android:drawableLeft="@drawable/pinglun"
+                        android:drawablePadding="5dp"
+                        android:gravity="center_vertical"
+                        android:text="0" />
+
+                    <TextView
+                        android:id="@+id/tv_yuedu"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginRight="20dp"
+                        android:layout_toLeftOf="@+id/tv_pinglun"
+                        android:drawableLeft="@drawable/liulan"
+                        android:drawablePadding="5dp"
+                        android:gravity="center_vertical"
+                        android:text="0" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="5dp"
+                        android:layout_alignParentBottom="true"
+                        android:background="@color/line_chang" />
+
+                </RelativeLayout>
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/rl_pinglu"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp">
+
+                </android.support.v7.widget.RecyclerView>
+
+
+            </LinearLayout>
+        </android.support.v4.widget.NestedScrollView>
+
+        <com.scwang.smartrefresh.layout.footer.ClassicsFooter
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </com.scwang.smartrefresh.layout.SmartRefreshLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:background="@color/white">
+
+        <EditText
+            android:id="@+id/ed_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/reply_comments"
+            android:layout_alignBottom="@+id/reply_comments"
+            android:layout_alignStart="@+id/view2"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="80dp"
+            android:layout_marginStart="10dp"
+            android:layout_weight="1"
+            android:background="@null"
+            android:hint="请输入评论内容"
+            android:paddingBottom="8dp"
+            android:paddingLeft="20dp"
+            android:paddingTop="8dp"
+            android:textSize="12dp" />
+
+        <Button
+            android:id="@+id/reply_comments"
+            android:layout_width="60dp"
+            android:layout_height="30dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginBottom="8dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/bt_color"
+            android:text="发布"
+            android:textSize="12dp" />
+
+        <View
+            android:id="@+id/view2"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="5dp"
+            android:layout_marginLeft="10dp"
+            android:background="@color/hot_product" />
+
+    </RelativeLayout>
+
+</RelativeLayout>

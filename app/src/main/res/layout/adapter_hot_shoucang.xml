@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:test="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:paddingLeft="10dp"
+    android:paddingTop="15dp"
+    android:paddingRight="10dp">
+
+    <LinearLayout
+        android:id="@+id/ll_choose"
+        android:layout_width="20dp"
+        android:layout_height="134dp"
+        android:gravity="center">
+
+        <CheckBox
+            android:id="@+id/cb_choose"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_centerVertical="true"
+            android:background="@drawable/checkbox_quxiao_selector"
+            android:button="@null"
+            android:clickable="false"
+            android:enabled="true"
+            android:focusable="false" />
+    </LinearLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/rl_image"
+        android:layout_width="134dp"
+        android:layout_height="134dp"
+        android:layout_marginLeft="10dp"
+        android:layout_toRightOf="@+id/ll_choose">
+
+        <com.d2956987215.mow.widgets.ShapedImageView
+            android:id="@+id/iv_pic"
+            android:layout_width="134dp"
+            android:layout_height="134dp"
+            android:layout_centerVertical="true"
+            android:scaleType="fitXY"
+            android:src="@mipmap/da_tu"
+            test:round_radius="8dp"
+            test:shape_mode="round_rect" />
+
+        <TextView
+            android:id="@+id/tv_share_money"
+            android:layout_width="match_parent"
+            android:layout_height="20dp"
+            android:layout_alignParentBottom="true"
+            android:background="#FD4964"
+            android:gravity="center"
+            android:text="赚￥8.88"
+            android:textColor="#ffffffff"
+            android:textSize="13sp"
+            android:visibility="gone"/>
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/la_hehe"
+        android:layout_width="match_parent"
+        android:layout_height="130dp"
+        android:layout_marginTop="2dp"
+        android:layout_toRightOf="@+id/rl_image"
+
+        android:orientation="vertical"
+        android:paddingLeft="10dp">
+
+
+        <TextView
+            android:id="@+id/tv_name"
+            android:layout_width="match_parent"
+            android:layout_height="36dp"
+            android:maxLines="2"
+            android:text="煲仔饭"
+            android:textColor="@color/First"
+            android:textSize="13sp" />
+
+        <LinearLayout
+            android:id="@+id/la_quan"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_name">
+
+            <TextView
+                android:id="@+id/tv_quancount"
+                android:layout_width="54dp"
+                android:layout_height="20dp"
+                android:layout_marginTop="15dp"
+                android:background="@mipmap/home_bg_ticket"
+                android:gravity="center"
+                android:paddingLeft="10dp"
+                android:text="￥20"
+                android:textColor="@color/white"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/tv_total"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="15dp"
+                android:layout_weight="1"
+                android:singleLine="true"
+                android:text="已售:3.45万"
+                android:textColor="#666666"
+                android:textSize="12sp" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
+                android:background="@mipmap/home_btn_upgrade"
+                android:gravity="center_horizontal"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="3dp"
+                    android:text="升级赚"
+                    android:textColor="#FFFFFF"
+                    android:textSize="9dp" />
+
+                <TextView
+                    android:id="@+id/tv_shengji"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="6dp"
+                    android:text="￥888.88"
+                    android:textColor="#FFFFFF"
+                    android:textSize="10dp" />
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/la_fenxiang"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/la_quan"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="10dp"
+            android:background="@mipmap/home_btn_share"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
+                android:text="分享赚"
+                android:textColor="#FFFFFF"
+                android:textSize="9dp" />
+
+            <TextView
+                android:id="@+id/tv_fenxiang"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingBottom="6dp"
+                android:text="￥888.88"
+                android:textColor="#FFFFFF"
+                android:textSize="10dp" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tv_nowprice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/la_quan"
+            android:layout_marginTop="5dp"
+            android:text="￥29.9"
+            android:textColor="#fffd4964"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/tv_old_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/la_quan"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="6.5dp"
+            android:layout_toRightOf="@+id/tv_nowprice"
+            android:text="￥39.9"
+            android:textColor="#ff999999"
+            android:textSize="13sp" />
+
+
+        <com.d2956987215.mow.widgets.ShapedImageView
+            android:id="@+id/iv_logo"
+            android:layout_width="17dp"
+            android:layout_height="17dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="5dp"
+            android:scaleType="fitXY"
+
+            android:src="@mipmap/icon_tianmao"
+            test:round_radius="6dp"
+            test:shape_mode="round_rect" />
+
+        <TextView
+            android:id="@+id/tv_dianming"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginLeft="8dp"
+            android:layout_marginBottom="5dp"
+            android:layout_toLeftOf="@+id/la_fenxiang"
+            android:layout_toRightOf="@+id/iv_logo"
+            android:singleLine="true"
+            android:text="官方旗舰店"
+            android:textColor="@color/backgroud"
+            android:textSize="@dimen/sp_12" />
+
+
+    </RelativeLayout>
+
+
+</RelativeLayout>

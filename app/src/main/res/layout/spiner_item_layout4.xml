@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@mipmap/group_bg_list"
+    android:descendantFocusability="blocksDescendants"
+    android:gravity="center"
+    android:orientation="vertical">
+
+
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rv"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+<!--
+
+
+
+    <TextView
+        android:id="@+id/tv_quanbu"
+        android:layout_width="wrap_content"
+        android:layout_height="35dp"
+        android:background="@color/white"
+        android:gravity="center"
+        android:text="全部(3.2w)"
+        android:textColor="@color/black"
+        android:textSize="12dp" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_marginLeft="17dp"
+        android:layout_marginRight="17dp"
+        android:background="@color/line" />
+
+    <TextView
+        android:id="@+id/tv_feimai"
+        android:layout_width="wrap_content"
+        android:layout_height="35dp"
+        android:background="@color/white"
+        android:gravity="center"
+        android:text="非买手(2000)"
+        android:textColor="@color/black"
+        android:textSize="12dp" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_marginLeft="17dp"
+        android:layout_marginRight="17dp"
+        android:background="@color/line" />
+
+    <TextView
+        android:id="@+id/tv_banzhang"
+        android:layout_width="wrap_content"
+        android:layout_height="35dp"
+        android:background="@color/white"
+        android:drawablePadding="5dp"
+        android:duplicateParentState="true"
+        android:gravity="center"
+        android:text="大班长(3w)"
+        android:textColor="@color/black"
+        android:textSize="12dp" />
+-->
+
+</LinearLayout>

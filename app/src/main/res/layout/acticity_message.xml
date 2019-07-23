@@ -1,0 +1,318 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/transparent_statusbar_fit"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <include layout="@layout/include_header" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/titlebar_line" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingLeft="12dp"
+        android:paddingRight="12dp">
+
+        <LinearLayout
+            android:id="@+id/ll_money"
+            android:layout_width="match_parent"
+            android:layout_height="85dp"
+            android:gravity="center_vertical"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <RelativeLayout
+                    android:layout_width="52dp"
+                    android:layout_height="52dp">
+
+                    <ImageView
+                        android:layout_width="52dp"
+                        android:layout_height="52dp"
+                        android:src="@mipmap/xx_icon_money" />
+
+                    <ImageView
+                        android:id="@+id/iv_money_dot"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_alignParentTop="true"
+                        android:src="@drawable/cirlce_msg"
+                        android:visibility="gone" />
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="奖金消息"
+                        android:textColor="@color/text_deep"
+                        android:textSize="@dimen/sp_16"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tv_money"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dp_10"
+                        android:ellipsize="end"
+                        android:lines="1"
+                        android:text=""
+                        android:textColor="@color/textgrey"
+                        android:textSize="13sp" />
+                </LinearLayout>
+
+
+                <ImageView
+                    android:layout_width="6.5dp"
+                    android:layout_height="11dp"
+                    android:src="@mipmap/forward" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="@color/divide_line" />
+
+        <LinearLayout
+            android:id="@+id/ll_system"
+            android:layout_width="match_parent"
+            android:layout_height="85dp"
+            android:gravity="center_vertical"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <RelativeLayout
+                    android:layout_width="52dp"
+                    android:layout_height="52dp">
+
+                    <ImageView
+                        android:layout_width="52dp"
+                        android:layout_height="52dp"
+                        android:src="@mipmap/xx_icon_xt" />
+
+                    <ImageView
+                        android:id="@+id/iv_system_dot"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_alignParentTop="true"
+                        android:src="@drawable/cirlce_msg"
+                        android:visibility="gone" />
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="系统消息"
+                        android:textColor="@color/text_deep"
+                        android:textSize="@dimen/sp_16"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tv_system"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dp_10"
+                        android:ellipsize="end"
+                        android:lines="1"
+                        android:text=""
+                        android:textColor="@color/textgrey"
+                        android:textSize="13sp" />
+                </LinearLayout>
+
+
+                <ImageView
+                    android:layout_width="6.5dp"
+                    android:layout_height="11dp"
+                    android:src="@mipmap/forward" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="@color/divide_line" />
+
+        <LinearLayout
+            android:id="@+id/ll_activity"
+            android:layout_width="match_parent"
+            android:layout_height="85dp"
+            android:gravity="center_vertical"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <RelativeLayout
+                    android:layout_width="52dp"
+                    android:layout_height="52dp">
+
+                    <ImageView
+                        android:layout_width="52dp"
+                        android:layout_height="52dp"
+                        android:src="@mipmap/xx_icon_hd" />
+
+                    <ImageView
+                        android:id="@+id/iv_activity_dot"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_alignParentTop="true"
+                        android:src="@drawable/cirlce_msg"
+                        android:visibility="gone" />
+                </RelativeLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="活动公告"
+                        android:textColor="@color/text_deep"
+                        android:textSize="@dimen/sp_16"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tv_activity"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dp_10"
+                        android:ellipsize="end"
+                        android:lines="1"
+                        android:text=""
+                        android:textColor="@color/textgrey"
+                        android:textSize="13sp" />
+                </LinearLayout>
+
+
+                <ImageView
+                    android:layout_width="6.5dp"
+                    android:layout_height="11dp"
+                    android:src="@mipmap/forward" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="@color/divide_line" />
+
+        <LinearLayout
+            android:id="@+id/ll_everyday"
+            android:layout_width="match_parent"
+            android:layout_height="85dp"
+            android:gravity="center_vertical"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <RelativeLayout
+                    android:layout_width="52dp"
+                    android:layout_height="52dp">
+
+                    <ImageView
+                        android:layout_width="52dp"
+                        android:layout_height="52dp"
+                        android:src="@mipmap/xx_icon_fire" />
+
+                    <ImageView
+                        android:id="@+id/iv_everyday_dot"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_alignParentTop="true"
+                        android:src="@drawable/cirlce_msg"
+                        android:visibility="gone" />
+                </RelativeLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="每日爆款"
+                        android:textColor="@color/text_deep"
+                        android:textSize="@dimen/sp_16"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tv_everyday"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dp_10"
+                        android:ellipsize="end"
+                        android:lines="1"
+                        android:text=""
+                        android:textColor="@color/textgrey"
+                        android:textSize="13sp" />
+                </LinearLayout>
+
+
+                <ImageView
+                    android:layout_width="6.5dp"
+                    android:layout_height="11dp"
+                    android:src="@mipmap/forward" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="@color/divide_line" />
+
+    </LinearLayout>
+</LinearLayout>

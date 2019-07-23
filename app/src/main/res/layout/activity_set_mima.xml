@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    style="@style/transparent_statusbar_fit"
+    android:orientation="vertical"
+    tools:context="com.d2956987215.mow.activity.mine.ChangePassActivity">
+
+    <TextView
+        android:id="@+id/tv_cancel"
+        android:layout_width="65dp"
+        android:layout_height="20dp"
+        android:layout_gravity="end"
+        android:layout_marginRight="38dp"
+        android:layout_marginTop="32dp"
+        android:background="@drawable/bg_red"
+        android:gravity="center"
+        android:text="跳过"
+        android:textColor="#fffd4964"
+        android:textSize="12sp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="37dp"
+        android:layout_marginTop="36dp"
+        android:text="请设置你的密码"
+        android:textColor="#ff666666"
+        android:textSize="26sp" />
+
+
+    <EditText
+        android:id="@+id/et_new_pass"
+        style="@style/Font14_grey"
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:layout_marginLeft="36dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginTop="36dp"
+        android:background="@color/white"
+        android:hint="设置你的登录密码"
+        android:inputType="textPassword"
+        android:textSize="14sp" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.1dp"
+        android:layout_marginLeft="36dp"
+        android:background="@color/nine" />
+
+    <EditText
+        android:id="@+id/et_queren"
+        style="@style/Font14_grey"
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:layout_marginLeft="36dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginTop="10dp"
+
+        android:background="@color/white"
+        android:hint="确定你的登录密码"
+        android:inputType="textPassword"
+        android:textSize="14sp" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.1dp"
+        android:layout_marginLeft="36dp"
+        android:background="@color/nine" />
+
+
+    <Button
+        android:id="@+id/bt_next"
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="60dp"
+        android:background="@drawable/bg_login"
+        android:text="下一步"
+        android:textColor="@color/white"
+        android:textSize="14sp" />
+</LinearLayout>

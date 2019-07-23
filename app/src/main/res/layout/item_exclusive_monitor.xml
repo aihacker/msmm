@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="12dp"
+        android:layout_marginRight="12dp"
+        android:layout_marginTop="10dp"
+        android:orientation="vertical">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="17dp"
+            android:background="@drawable/bg_white10"
+            android:orientation="vertical"
+            android:paddingBottom="20dp"
+            android:paddingTop="20dp">
+
+            <TextView
+                android:id="@+id/tv_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="联系班长进入买手专属培训群"
+                android:textColor="@color/six"
+                android:textSize="@dimen/sp_12" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:orientation="horizontal">
+
+                <com.d2956987215.mow.widgets.CircleImageView
+                    android:id="@+id/circle_head"
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:layout_marginLeft="23dp"
+                    android:src="@drawable/maishou" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="7dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/grade_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/text_deep"
+                        android:textSize="14sp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/grade"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/shape3_f1"
+                            android:paddingBottom="3dp"
+                            android:paddingLeft="@dimen/dp_4"
+                            android:paddingRight="@dimen/dp_4"
+                            android:paddingTop="3dp"
+                            android:textColor="@color/six"
+                            android:textSize="11sp" />
+
+                        <TextView
+                            android:id="@+id/nickname"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="8dp"
+                            android:textColor="@color/text_deep"
+                            android:textSize="12sp" />
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/iv_wxqrcode"
+                    android:layout_width="101dp"
+                    android:layout_height="101dp"
+                    android:background="#DCDCDC"
+                    android:scaleType="fitXY" />
+
+                <TextView
+                    android:id="@+id/tv_save"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/border_red"
+                    android:paddingBottom="@dimen/dp_4"
+                    android:paddingLeft="@dimen/dp_10"
+                    android:paddingRight="@dimen/dp_10"
+                    android:paddingTop="@dimen/dp_4"
+                    android:text="保存二维码"
+                    android:textColor="@color/text_deep"
+                    android:textSize="13sp" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/tv_wechatName"
+                        android:layout_width="135dp"
+                        android:layout_height="22dp"
+                        android:background="@drawable/shape_left3_f1"
+                        android:gravity="center_vertical"
+                        android:paddingLeft="7dp"
+                        android:text=""
+                        android:textColor="@color/text_deep"
+                        android:textSize="11sp" />
+
+                    <TextView
+                        android:id="@+id/tv_copy"
+                        android:layout_width="39dp"
+                        android:layout_height="22dp"
+                        android:background="@drawable/shape_right3_fd"
+                        android:gravity="center"
+                        android:text="复制"
+                        android:textColor="@color/white"
+                        android:textSize="13sp" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="94dp"
+            android:layout_height="31dp"
+            android:layout_centerHorizontal="true"
+            android:background="@mipmap/bigvip_zsyys"
+            android:gravity="center"
+            android:text="专属大班长"
+            android:textColor="@color/white"
+            android:textSize="13sp" />
+
+    </RelativeLayout>
+
+</LinearLayout>

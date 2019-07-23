@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/transparent_statusbar_fit"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    android:orientation="vertical">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="44dp">
+
+
+        <RelativeLayout
+            android:id="@+id/rl_back"
+            android:layout_width="44dp"
+            android:layout_height="44dp">
+
+            <ImageView
+                android:layout_width="18dp"
+                android:layout_height="20dp"
+                android:layout_centerInParent="true"
+                android:src="@mipmap/back_black" />
+        </RelativeLayout>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:maxLength="10"
+            android:text="订单明细"
+            android:textColor="@color/d3"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/tv_benyue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dp"
+            android:drawableRight="@mipmap/bill_icon_time"
+            android:drawablePadding="5dp"
+            android:gravity="center"
+
+            android:text="本月" />
+
+    </RelativeLayout>
+
+
+    <LinearLayout
+        android:id="@+id/la_search"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:background="#F4F8FB"
+        android:gravity="center_vertical"
+        android:paddingLeft="15dp"
+        android:paddingRight="14dp">
+
+
+        <RelativeLayout
+            android:id="@+id/rl_search"
+            android:layout_width="45dp"
+            android:layout_height="match_parent"
+            android:visibility="gone">
+
+            <ImageView
+                android:layout_width="18dp"
+                android:layout_height="18dp"
+                android:layout_centerInParent="true"
+                android:src="@mipmap/icon_search" />
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/tv_submit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableRight="@mipmap/group_icon_down"
+            android:drawablePadding="5dp"
+            android:text="全部"
+            android:textColor="#666666"
+            android:textSize="@dimen/sp_14" />
+
+        <EditText
+            android:id="@+id/et_search"
+            android:layout_width="0dp"
+            android:layout_height="33dp"
+            android:layout_gravity="center"
+            android:layout_marginStart="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_weight="1"
+            android:background="@drawable/bg_order_detail"
+            android:drawableLeft="@mipmap/icon_search"
+            android:drawablePadding="10dp"
+
+            android:gravity="center_vertical"
+            android:hint="请输入订单号"
+            android:imeOptions="actionSend"
+            android:maxLines="1"
+            android:paddingLeft="5dp"
+            android:singleLine="true"
+            android:textColorHint="@color/d4"
+            android:textSize="12sp" />
+
+    </LinearLayout>
+
+    <com.d2956987215.mow.widgets.MyRadioGroup
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:orientation="horizontal">
+
+
+        <RadioButton
+            android:id="@+id/rb_quanbu"
+            android:layout_width="50dp"
+            android:layout_height="45dp"
+            android:layout_marginLeft="25dp"
+            android:background="@drawable/radio_btn_plus_indicator"
+            android:button="@null"
+            android:checked="true"
+            android:gravity="center"
+            android:text="全部"
+            android:textColor="@color/item_color"
+            android:textSize="14dp" />
+
+
+        <RadioButton
+            android:id="@+id/rb_yifukuan"
+            android:layout_width="61dp"
+            android:layout_height="45dp"
+            android:layout_centerInParent="true"
+            android:layout_marginLeft="15dp"
+            android:background="@drawable/radio_btn_plus_indicator"
+            android:button="@null"
+            android:gravity="center"
+            android:text="已付款"
+            android:textColor="@color/item_color"
+            android:textSize="14dp" />
+
+        <RadioButton
+            android:id="@+id/rb_yijiesuan"
+            android:layout_width="50dp"
+            android:layout_height="45dp"
+            android:layout_centerInParent="true"
+            android:layout_marginLeft="15dp"
+            android:background="@drawable/radio_btn_plus_indicator"
+            android:button="@null"
+            android:gravity="center"
+            android:text="已结算"
+            android:textColor="@color/item_color"
+            android:textSize="14dp" />
+
+        <RadioButton
+            android:id="@+id/rb_yishixiao"
+            android:layout_width="50dp"
+            android:layout_height="45dp"
+            android:layout_centerInParent="true"
+            android:layout_marginLeft="15dp"
+            android:background="@drawable/radio_btn_plus_indicator"
+            android:button="@null"
+            android:gravity="center"
+            android:text="已失效"
+            android:textColor="@color/item_color"
+            android:textSize="14dp" />
+
+
+    </com.d2956987215.mow.widgets.MyRadioGroup>
+
+
+    <android.support.v4.widget.SwipeRefreshLayout
+        android:id="@+id/refresh_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recycler_hot_product"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp" />
+    </android.support.v4.widget.SwipeRefreshLayout>
+
+    <!--
+        <FrameLayout
+            android:id="@+id/fl_container"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+    -->
+
+
+    <!--    <View
+            android:layout_width="match_parent"
+            android:layout_height="30dp" />-->
+
+</LinearLayout>

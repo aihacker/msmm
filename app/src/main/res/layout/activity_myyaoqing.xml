@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="225dp"
+                android:background="@drawable/me_bg"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_marginTop="25dp"
+                    android:layout_height="44dp">
+
+
+                    <RelativeLayout
+                        android:id="@+id/rl_back"
+                        android:layout_width="44dp"
+                        android:layout_height="44dp">
+
+                        <ImageView
+                            android:layout_width="18dp"
+                            android:layout_height="20dp"
+                            android:layout_centerInParent="true"
+                            android:src="@mipmap/white_back" />
+                    </RelativeLayout>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_centerInParent="true"
+                        android:gravity="center"
+                        android:layout_marginTop="25dp"
+                        android:maxLength="10"
+                        android:text="我的邀请"
+                        android:textColor="@color/white"
+                        android:textSize="15sp" />
+
+
+                    <TextView
+                        android:id="@+id/tv_reward_rules"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerInParent="true"
+                        android:layout_marginTop="25dp"
+                        android:layout_marginRight="12dp"
+                        android:text="奖励规则"
+                        android:textColor="#ffffffff"
+                        android:textSize="14sp" />
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="120dp"
+                    android:background="@mipmap/yaoqing_bg_fuzhi"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
+                            android:text="邀请码:"
+                            android:textColor="#ff333333"
+                            android:textSize="14sp" />
+
+                        <TextView
+                            android:id="@+id/tv_yaoqingma"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
+                            android:text=""
+                            android:textColor="#ff333333"
+                            android:textSize="14sp" />
+
+
+                    </LinearLayout>
+
+
+                    <TextView
+                        android:id="@+id/tv_fuzhi"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="2"
+                        android:gravity="center"
+                        android:text="复制邀请码"
+                        android:textColor="#ff333333"
+                        android:textSize="14sp" />
+
+                </LinearLayout>
+
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/tv_haibao"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginLeft="38dp"
+                android:layout_marginTop="25dp"
+                android:layout_marginRight="38dp"
+                android:background="@mipmap/yaoqing_btn_bg"
+                android:gravity="center"
+                android:text="生成推广海报"
+                android:textColor="#ff333333"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/tv_lianjie"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginLeft="38dp"
+                android:layout_marginTop="25dp"
+                android:layout_marginRight="38dp"
+                android:background="@mipmap/yaoqing_btn_bg"
+                android:gravity="center"
+                android:text="分享好友链接"
+                android:textColor="#ff333333"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/tv_tongxu"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginLeft="38dp"
+                android:layout_marginTop="25dp"
+                android:layout_marginRight="38dp"
+                android:background="@mipmap/yaoqing_btn_bg"
+                android:gravity="center"
+                android:text="推荐通讯录好友"
+                android:textColor="#ff333333"
+                android:textSize="14sp" />
+
+            <LinearLayout
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="60dp"
+                android:layout_marginBottom="60dp"
+                android:background="@mipmap/yaoqing_bg_erweima"
+                android:gravity="center"
+                android:padding="1dp">
+
+                <ImageView
+                    android:id="@+id/iv_erweima"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="fitXY" />
+            </LinearLayout>
+        </LinearLayout>
+
+    </android.support.v4.widget.NestedScrollView>
+
+</LinearLayout>

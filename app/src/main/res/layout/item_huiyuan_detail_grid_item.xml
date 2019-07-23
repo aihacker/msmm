@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingTop="@dimen/dp_10"
+    >
+
+    <ImageView
+        android:id="@+id/checkFinish"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_alignParentRight="true"
+        android:src="@drawable/check_ok_green"
+        android:visibility="gone" />
+
+    <ImageView
+        android:id="@+id/iv_icon"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:id="@+id/tv_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:text="测试"
+        android:lines="2"
+        android:layout_below="@id/iv_icon"
+        android:layout_centerHorizontal="true"
+        android:textColor="#333333"
+        android:gravity="center_horizontal|top"
+        android:textSize="13sp" />
+
+    <TextView
+        android:id="@+id/tv_name_desc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_below="@id/tv_name"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        android:text="测试"
+        android:textColor="#999999"
+        android:textSize="10sp" />
+
+
+</RelativeLayout>

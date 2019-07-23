@@ -1,0 +1,436 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <com.d2956987215.mow.widgets.VpSwipeRefreshLayout
+        android:id="@+id/refresh_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <android.support.design.widget.CoordinatorLayout
+            android:id="@+id/coordinator_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+
+            <!-- 第二部分:缩放控件-->
+            <android.support.design.widget.AppBarLayout
+                android:id="@+id/id_appbarlayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                app:elevation="0dp"
+                app:layout_behavior="com.d2956987215.mow.util.FlingBehavior"
+                app:layout_scrollFlags="scroll">
+
+                <android.support.design.widget.CollapsingToolbarLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_scrollFlags="scroll|exitUntilCollapsed">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/divider"
+                        android:orientation="vertical">
+
+
+                        <com.bigkoo.convenientbanner.ConvenientBanner
+                            android:id="@+id/banner"
+                            android:layout_width="match_parent"
+                            android:layout_height="161dp"
+                            android:paddingBottom="@dimen/dp_10"
+                            android:paddingLeft="12dp"
+                            android:paddingRight="12dp"
+                            android:paddingTop="@dimen/dp_10"
+                            app:canLoop="true"
+                            app:layout_scrollFlags="scroll" />
+
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@color/white"
+                            android:orientation="vertical">
+
+                            <RelativeLayout
+                                android:id="@+id/rl_nav"
+                                android:layout_width="match_parent"
+                                android:layout_height="195dp"
+                                android:gravity="center"
+                                android:paddingBottom="15dp"
+                                android:paddingTop="15dp">
+
+                                <android.support.v4.view.ViewPager
+                                    android:id="@+id/viewpager"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_above="@+id/points" />
+
+                                <LinearLayout
+                                    android:id="@+id/points"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="3dp"
+                                    android:layout_alignParentBottom="true"
+                                    android:layout_marginTop="10dp"
+                                    android:gravity="center"
+                                    android:orientation="horizontal" />
+                            </RelativeLayout>
+
+                            <com.bigkoo.convenientbanner.ConvenientBanner
+                                android:id="@+id/banner2"
+                                android:layout_width="match_parent"
+                                android:layout_height="84dp"
+                                app:layout_scrollFlags="scroll" />
+
+
+                            <com.d2956987215.mow.widgets.NoScrollListview
+                                android:id="@+id/gv_activities"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/dp_10"
+                                android:divider="@null" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/ll_intelligence"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@color/divider"
+                            android:orientation="vertical"
+                            android:paddingBottom="15dp"
+                            android:paddingLeft="12dp"
+                            android:paddingRight="12dp"
+                            android:paddingTop="15dp">
+
+                            <LinearLayout
+                                android:id="@+id/ll_intelligenceMore"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center_vertical"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:text="买手情报局"
+                                    android:textColor="@color/text_deep"
+                                    android:textSize="@dimen/sp_16"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="更多>"
+                                    android:textColor="@color/six"
+                                    android:textSize="14sp" />
+                            </LinearLayout>
+
+
+                            <com.d2956987215.mow.widgets.NoScrollGridView
+                                android:id="@+id/gv_intelligence"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="15dp"
+                                android:horizontalSpacing="@dimen/dp_10"
+                                android:numColumns="2"
+                                android:verticalSpacing="@dimen/dp_10" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="12dp"
+                            android:layout_marginRight="12dp"
+                            android:background="@drawable/bg_white10"
+                            android:orientation="vertical"
+                            android:paddingTop="14dp">
+
+                            <LinearLayout
+                                android:id="@+id/ll_toutiao"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="12dp"
+                                android:layout_marginRight="12dp"
+                                android:gravity="center_vertical"
+                                android:orientation="horizontal">
+
+                                <ImageView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="15dp"
+                                    android:src="@mipmap/home_tout" />
+
+                                <ViewFlipper
+                                    android:id="@+id/marquee_view"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="15dp"
+                                    android:autoStart="true"
+                                    android:flipInterval="2500"
+                                    android:inAnimation="@anim/anim_marquee_in"
+                                    android:outAnimation="@anim/anim_marquee_out" />
+
+                            </LinearLayout>
+
+
+                            <include
+                                layout="@layout/include_qianggou"
+                                app:layout_scrollFlags="scroll" />
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+                </android.support.design.widget.CollapsingToolbarLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:background="@color/divider"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:id="@+id/ll_type1"
+                        android:layout_width="0dp"
+                        android:layout_height="45dp"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/rb_type1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="实时"
+                            android:textColor="@drawable/home_radio_indicator"
+                            android:textSize="13sp" />
+
+                        <TextView
+                            android:id="@+id/tv_type1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="1dp"
+                            android:paddingBottom="1dp"
+                            android:paddingLeft="9dp"
+                            android:paddingRight="9dp"
+                            android:paddingTop="1dp"
+                            android:text="销量榜"
+                            android:textColor="@drawable/home_radiotext_indicator"
+                            android:textSize="11sp" />
+
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="0.5dp"
+                        android:layout_height="45dp"
+                        android:background="#EEEEEE" />
+
+                    <LinearLayout
+                        android:id="@+id/ll_type2"
+                        android:layout_width="0dp"
+                        android:layout_height="45dp"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/rb_type2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="今日"
+                            android:textColor="@drawable/home_radio_indicator"
+                            android:textSize="13sp" />
+
+                        <TextView
+                            android:id="@+id/tv_type2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="1dp"
+                            android:paddingBottom="1dp"
+                            android:paddingLeft="9dp"
+                            android:paddingRight="9dp"
+                            android:paddingTop="1dp"
+                            android:text="爆单榜"
+                            android:textColor="@drawable/home_radiotext_indicator"
+                            android:textSize="11sp" />
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="0.5dp"
+                        android:layout_height="45dp"
+                        android:background="#EEEEEE" />
+
+                    <LinearLayout
+                        android:id="@+id/ll_type3"
+                        android:layout_width="0dp"
+                        android:layout_height="45dp"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/rb_type3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="出单"
+                            android:textColor="@drawable/home_radio_indicator"
+                            android:textSize="13sp" />
+
+                        <TextView
+                            android:id="@+id/tv_type3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="1dp"
+                            android:paddingBottom="1dp"
+                            android:paddingLeft="9dp"
+                            android:paddingRight="9dp"
+                            android:paddingTop="1dp"
+                            android:text="指数榜"
+                            android:textColor="@drawable/home_radiotext_indicator"
+                            android:textSize="11sp" />
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="0.5dp"
+                        android:layout_height="45dp"
+                        android:background="#EEEEEE" />
+
+                    <LinearLayout
+                        android:id="@+id/ll_type4"
+                        android:layout_width="0dp"
+                        android:layout_height="45dp"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/rb_type4"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="今日 "
+                            android:textColor="@drawable/home_radio_indicator"
+                            android:textSize="13sp" />
+
+                        <TextView
+                            android:id="@+id/tv_type4"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="1dp"
+                            android:paddingBottom="1dp"
+                            android:paddingLeft="9dp"
+                            android:paddingRight="9dp"
+                            android:paddingTop="1dp"
+                            android:text="热推榜"
+                            android:textColor="@drawable/home_radiotext_indicator"
+                            android:textSize="11sp" />
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="0.5dp"
+                        android:layout_height="45dp"
+                        android:background="#EEEEEE" />
+
+                    <LinearLayout
+                        android:id="@+id/ll_type5"
+                        android:layout_width="0dp"
+                        android:layout_height="45dp"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/rb_type5"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="推广"
+                            android:textColor="@drawable/home_radio_indicator"
+                            android:textSize="13sp" />
+
+                        <TextView
+                            android:id="@+id/tv_type5"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="1dp"
+                            android:paddingBottom="1dp"
+                            android:paddingLeft="9dp"
+                            android:paddingRight="9dp"
+                            android:paddingTop="1dp"
+                            android:text="排行榜"
+                            android:textColor="@drawable/home_radiotext_indicator"
+                            android:textSize="11sp" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </android.support.design.widget.AppBarLayout>
+
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/recycler_hot_product"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="1dp"
+                android:overScrollMode="always"
+                app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+
+
+        </android.support.design.widget.CoordinatorLayout>
+
+    </com.d2956987215.mow.widgets.VpSwipeRefreshLayout>
+
+    <ImageView
+        android:id="@+id/iv_hongbao"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="10dp"
+        android:scaleType="centerCrop" />
+
+    <LinearLayout
+        android:id="@+id/ll_notice_url"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="20dp"
+        android:background="@mipmap/auth_tao_bao_notice_bg"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingLeft="10dp"
+        android:paddingRight="20dp"
+        android:visibility="gone">
+
+        <ImageView
+            android:id="@+id/iv_close"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:src="@mipmap/auth_tao_bao_notice_close" />
+
+        <View
+            android:layout_width="0.5dp"
+            android:layout_height="25dp"
+            android:layout_marginRight="20dp"
+            android:background="@color/white" />
+
+        <TextView
+            android:id="@+id/tv_notice_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text=""
+            android:textColor="#ffffffff"
+            android:textSize="15sp" />
+    </LinearLayout>
+
+
+</RelativeLayout>

@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_white10"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:paddingBottom="20dp">
+
+    <ImageView
+        android:id="@+id/iv_close"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right"
+        android:layout_marginRight="11dp"
+        android:layout_marginTop="16dp"
+        android:padding="5dp"
+        android:src="@mipmap/auth_taobao_close" />
+
+    <ImageView
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="8dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/maishou" />
+
+
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="23dp"
+        android:text=""
+        android:textColor="#333333"
+        android:textSize="17sp" />
+
+    <TextView
+        android:id="@+id/tv_des"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="9dp"
+        android:paddingLeft="17dp"
+        android:paddingRight="17dp"
+        android:text=""
+        android:textColor="#666666"
+        android:textSize="12sp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:orientation="horizontal"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp">
+
+        <TextView
+            android:id="@+id/tv_todetail"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/shape19_ee"
+            android:gravity="center"
+            android:paddingBottom="12dp"
+            android:paddingTop="12dp"
+            android:text="了解详情"
+            android:textColor="@color/backgroud"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/tv_totaobao"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_weight="1"
+            android:background="@drawable/shape19_fd"
+            android:gravity="center"
+            android:paddingBottom="12dp"
+            android:paddingTop="12dp"
+            android:text="前往淘宝授权"
+            android:textColor="@color/white"
+            android:textSize="15sp" />
+
+    </LinearLayout>
+
+
+</LinearLayout>

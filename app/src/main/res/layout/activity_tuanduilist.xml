@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:focusable="true"
+    style="@style/transparent_statusbar_fit"
+    android:background="@color/white"
+    android:focusableInTouchMode="true"
+    android:orientation="vertical">
+
+    <include layout="@layout/include_header" />
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/line"/>
+
+    <com.d2956987215.mow.widgets.MyRadioGroup
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:orientation="horizontal">
+
+
+        <RadioButton
+            android:id="@+id/rb_a"
+            android:layout_width="wrap_content"
+            android:layout_height="45dp"
+            android:layout_weight="1"
+            android:background="@drawable/radio_btn_plus_indicator"
+            android:button="@null"
+            android:checked="true"
+            android:gravity="center"
+            android:text="A级"
+            android:textColor="@color/item_color"
+            android:textSize="14dp" />
+
+
+        <RadioButton
+            android:id="@+id/rb_b"
+            android:layout_width="wrap_content"
+            android:layout_height="45dp"
+            android:layout_centerInParent="true"
+            android:layout_marginLeft="25dp"
+            android:layout_weight="1"
+            android:background="@drawable/radio_btn_plus_indicator"
+            android:button="@null"
+            android:gravity="center"
+            android:text="B级"
+            android:textColor="@color/item_color"
+            android:textSize="14dp" />
+
+
+    </com.d2956987215.mow.widgets.MyRadioGroup>
+
+    <android.support.v4.widget.SwipeRefreshLayout
+        android:id="@+id/refresh_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recycler_hot_product"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="10dp" />
+    </android.support.v4.widget.SwipeRefreshLayout>
+
+
+</LinearLayout>

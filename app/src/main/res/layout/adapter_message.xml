@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/tv_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="15dp"
+        android:text="2019-8-9"
+        android:textColor="@color/nine"
+        android:textSize="10sp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="10dp"
+        android:paddingTop="5dp">
+
+        <ImageView
+            android:layout_width="25dp"
+            android:layout_height="21dp"
+            android:layout_gravity="center"
+            android:layout_marginStart="15dp"
+            android:src="@mipmap/notify" />
+
+        <TextView
+            android:id="@+id/tv_content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginStart="12dp"
+            android:background="@drawable/bg_message_content"
+            android:padding="8dp"
+            android:text="我是一个消息"
+            android:textColor="@color/three"
+            android:textSize="11sp" />
+    </LinearLayout>
+</LinearLayout>

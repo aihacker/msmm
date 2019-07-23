@@ -1,0 +1,362 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg"
+    android:orientation="vertical">
+
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fadingEdge="none"
+        android:overScrollMode="never">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingBottom="@dimen/dp_10">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="187dp"
+                android:background="@mipmap/vip_bg_top"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:id="@+id/rl_back"
+                    android:layout_width="44dp"
+                    android:layout_height="44dp"
+                    android:layout_marginTop="25dp">
+
+                    <ImageView
+                        android:layout_width="18dp"
+                        android:layout_height="20dp"
+                        android:layout_centerInParent="true"
+                        android:src="@mipmap/white_back" />
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dp_40"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <com.d2956987215.mow.widgets.CircleImageView
+                        android:id="@+id/circle_head"
+                        android:layout_width="52dp"
+                        android:layout_height="52dp"
+                        android:src="@drawable/maishou"
+                        app:civ_border_color="#FF000000"
+                        app:civ_border_width="2dp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/dp_10"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/tv_nickname"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/white"
+                                android:textSize="15sp"
+                                android:textStyle="bold" />
+
+                            <LinearLayout
+                                android:id="@+id/ivbg_grade"
+                                android:layout_width="85dp"
+                                android:layout_height="25dp"
+                                android:layout_marginLeft="15dp"
+                                android:gravity="center"
+                                android:src="@mipmap/vip_icon_ynms">
+
+                                <ImageView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:src="@mipmap/vip_icon_hg" />
+
+                                <TextView
+                                    android:id="@+id/tv_rolename"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="1dp"
+                                    android:text="一年买手"
+                                    android:textColor="#32323A"
+                                    android:textSize="12sp" />
+                            </LinearLayout>
+                        </LinearLayout>
+
+                        <TextView
+                            android:id="@+id/tv_date"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/dp_10"
+                            android:textColor="#DCDCDC"
+                            android:textSize="12sp" />
+                    </LinearLayout>
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_authority"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="12dp"
+                android:layout_marginRight="12dp"
+                android:layout_marginTop="-52dp"
+                android:background="@mipmap/mais_bg_qx"
+                android:orientation="vertical"
+                android:paddingBottom="15dp"
+                android:paddingTop="15dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="6dp"
+                        android:layout_height="6dp"
+                        android:src="@mipmap/bigvip_icon_fk" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="5dp"
+                        android:text="我的权限"
+                        android:textColor="@color/yellow1"
+                        android:textSize="15sp"
+                        android:textStyle="bold" />
+
+                    <ImageView
+                        android:layout_width="6dp"
+                        android:layout_height="6dp"
+                        android:src="@mipmap/bigvip_icon_fk" />
+                </LinearLayout>
+
+                <com.d2956987215.mow.widgets.NoScrollGridView
+                    android:id="@+id/gv_myAuthority"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginTop="10dp"
+                    android:listSelector="@android:color/transparent"
+                    android:numColumns="3"
+                    android:verticalSpacing="20dp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="25dp"
+                        android:layout_height="1dp"
+                        android:background="@color/backgroud" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="5dp"
+                        android:text="待开通权限"
+                        android:textColor="@color/text_deep"
+                        android:textSize="15sp" />
+
+                    <ImageView
+                        android:layout_width="25dp"
+                        android:layout_height="1dp"
+                        android:background="@color/backgroud" />
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:text="（完成晋级任务即可获得权限）"
+                    android:textColor="@color/six"
+                    android:textSize="@dimen/sp_12" />
+
+                <com.d2956987215.mow.widgets.NoScrollGridView
+                    android:id="@+id/gv_pendingAuthority"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginTop="10dp"
+                    android:listSelector="@android:color/transparent"
+                    android:numColumns="3"
+                    android:verticalSpacing="20dp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="12dp"
+                android:layout_marginRight="12dp"
+                android:background="@drawable/bg_white10"
+                android:orientation="vertical"
+                android:paddingBottom="@dimen/dp_10"
+                android:paddingLeft="@dimen/dp_10"
+                android:paddingTop="@dimen/dp_10">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="14dp"
+                        android:layout_height="15dp"
+                        android:src="@mipmap/vip_icon_jins" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="7dp"
+                            android:text="晋升任务"
+                            android:textColor="@color/text_deep"
+                            android:textSize="15sp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="（任满其一便自动升级）"
+                            android:textColor="@color/text_deep"
+                            android:textSize="12sp" />
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/tv_shuoming"
+                        android:layout_width="62dp"
+                        android:layout_height="21dp"
+                        android:background="@drawable/leftred_circle10"
+                        android:gravity="center"
+                        android:text="升级说明"
+                        android:textColor="@color/white"
+                        android:textSize="12sp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="59dp"
+                        android:layout_height="20dp"
+                        android:layout_marginTop="13dp"
+                        android:background="@drawable/vip_gradient"
+                        android:gravity="center"
+                        android:text="方式一"
+                        android:textColor="@color/white"
+                        android:textSize="13sp" />
+
+                    <android.support.v7.widget.RecyclerView
+                        android:id="@+id/recyclerView_conditionOne"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/ll_conditionTwo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:layout_width="59dp"
+                        android:layout_height="20dp"
+                        android:layout_marginTop="13dp"
+                        android:background="@drawable/vip_gradient"
+                        android:gravity="center"
+                        android:text="方式二"
+                        android:textColor="@color/white"
+                        android:textSize="13sp" />
+
+                    <android.support.v7.widget.RecyclerView
+                        android:id="@+id/recyclerView_conditionTwo"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/recyclerView_wx"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <RelativeLayout
+                android:id="@+id/rl_article"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="12dp"
+                android:layout_marginRight="12dp"
+                android:layout_marginTop="@dimen/dp_10"
+                android:orientation="vertical">
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="17dp"
+                    android:background="@drawable/bg_white10"
+                    android:orientation="horizontal"
+                    android:paddingBottom="12dp"
+                    android:paddingLeft="12dp"
+                    android:paddingRight="12dp"
+                    android:paddingTop="20dp">
+
+                    <com.d2956987215.mow.widgets.NoScrollGridView
+                        android:id="@+id/gv_article"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:horizontalSpacing="10dp"
+                        android:numColumns="3"
+                        android:verticalSpacing="10dp" />
+
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="94dp"
+                    android:layout_height="31dp"
+                    android:layout_centerHorizontal="true"
+                    android:background="@mipmap/bigvip_zsyys"
+                    android:gravity="center"
+                    android:text="专属客服"
+                    android:textColor="@color/white"
+                    android:textSize="13sp" />
+
+            </RelativeLayout>
+
+        </LinearLayout>
+    </android.support.v4.widget.NestedScrollView>
+
+</LinearLayout>

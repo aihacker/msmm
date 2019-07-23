@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/dialog_alarmAlert"
+    android:layout_width="match_parent"
+    android:layout_height="296dp"
+    android:layout_marginLeft="43dp"
+    android:layout_marginRight="44dp"
+    android:background="@drawable/circle"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="113dp"
+        android:background="@mipmap/link_1"
+        android:gravity="right">
+
+        <ImageView
+            android:id="@+id/iv_qx"
+            android:layout_width="16dp"
+            android:layout_height="16dp"
+            android:paddingTop="10dp"
+            android:layout_marginRight="10dp"
+            android:src="@mipmap/select_close" />
+
+    </LinearLayout>
+
+
+    <TextView
+        android:id="@+id/tv_hf"
+        android:layout_width="match_parent"
+        android:layout_height="73dp"
+        android:layout_below="@+id/tv_message"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
+        android:paddingLeft="16dp"
+        android:text="识别到以下链接"
+        android:textColor="#ff333333"
+        android:textSize="13sp" />
+
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_marginTop="20dp"
+        android:layout_above="@+id/la_di"
+        android:background="@color/line" />
+
+    <LinearLayout
+        android:id="@+id/la_di"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/tv_quxiao"
+            style="@style/Font14_black"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:background="#F0F0F0"
+            android:gravity="center"
+            android:text="取消"
+            android:textColor="#ff999999"
+            android:textSize="17sp" />
+
+        <View
+            android:layout_width="0.5dp"
+            android:layout_height="match_parent"
+            android:background="@color/line" />
+
+
+        <TextView
+            android:id="@+id/tv_queding"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:background="@color/white"
+            android:gravity="center"
+            android:text="立即转链"
+            android:textColor="#ffff528b"
+            android:textSize="17sp" />
+
+    </LinearLayout>
+
+
+</LinearLayout>
+
+
+
+
+
+
+
+
+
+
+
+
+

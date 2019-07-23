@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@android:color/transparent"
+    android:orientation="horizontal">
+
+    <LinearLayout
+        android:id="@+id/pop_conent"
+        android:layout_width="327dp"
+        android:layout_height="120.5dp"
+        android:background="@drawable/bg_select_pic"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/ll_take"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
+            <ImageView
+                android:id="@+id/iv_camera"
+                android:layout_width="26.5dp"
+                android:layout_height="21.5dp"
+                android:layout_gravity="center"
+                android:layout_marginLeft="15dp"
+                android:src="@mipmap/camera_select" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="15dp"
+                android:text="@string/take_photo"
+                android:textColor="@color/six"
+                android:textSize="34px" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#EDEDED" />
+
+        <LinearLayout
+            android:id="@+id/ll_from_album"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="21dp"
+                android:layout_gravity="center"
+                android:layout_marginLeft="15dp"
+                android:src="@mipmap/gallery" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="15dp"
+                android:focusable="true"
+                android:gravity="center"
+                android:text="@string/take_from_album"
+                android:textColor="@color/six"
+                android:textSize="34px" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

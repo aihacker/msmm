@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:padding="10dp"
+    android:orientation="vertical"
+    android:background="@drawable/shape_custom_dialog_bg">
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+
+        android:paddingBottom="10dip"
+        android:gravity="center"
+        android:orientation="horizontal" >
+        <ImageView
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:visibility="gone"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="10dip"
+           
+            />
+        <TextView
+            android:id="@+id/title"
+            android:text="建议"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dip"
+            android:textStyle="bold"
+            android:textSize="20sp"
+
+            />
+    </LinearLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/divider_color"/>
+
+    <LinearLayout
+        android:id="@+id/content"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="100dip"
+        android:background="@color/white"
+        android:orientation="vertical"
+        android:gravity="center">
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/message"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dip"
+                android:textSize="16sp"
+                android:textColor="#FF000000"/>
+        </ScrollView>
+
+
+    </LinearLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/divider_color"/>
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="40dp"
+        android:gravity="center_vertical|right"
+        android:background="@color/white"
+        android:orientation="horizontal" >
+        <TextView
+            android:id="@+id/negativeButton"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:layout_height="match_parent"
+            android:textColor="@color/black"
+            android:text="取消"
+            android:singleLine="true" />
+        <View
+            android:id="@+id/line_bottom"
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="@color/divider_color"/>
+
+        <TextView
+            android:id="@+id/positiveButton"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:layout_height="match_parent"
+            android:textColor="@color/black"
+            android:text="确定"
+            android:singleLine="true" />
+    </LinearLayout>
+
+</LinearLayout>

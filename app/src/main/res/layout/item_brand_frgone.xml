@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="10dp"
+    android:orientation="vertical"
+    android:paddingLeft="12dp"
+    android:paddingRight="12dp">
+
+    <LinearLayout
+        android:id="@+id/ll_more"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:background="@mipmap/pplm_bg_pinpai"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingLeft="@dimen/dp_10"
+        android:paddingRight="@dimen/dp_10">
+
+        <ImageView
+            android:id="@+id/iv_brand"
+            android:layout_width="56dp"
+            android:layout_height="26dp"
+            android:scaleType="centerCrop" />
+
+        <TextView
+            android:id="@+id/tv_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_weight="1"
+            android:textColor="@color/text_deep"
+            android:textSize="13sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="更多"
+            android:textColor="@color/dialog_text_color"
+            android:textSize="12sp" />
+
+
+        <ImageView
+            android:layout_width="11dp"
+            android:layout_height="11dp"
+            android:layout_marginLeft="5dp"
+            android:src="@mipmap/pplm_icon_more" />
+
+
+    </LinearLayout>
+
+    <com.d2956987215.mow.widgets.NoScrollGridView
+        android:id="@+id/gv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/shapebottom_white8"
+        android:horizontalSpacing="10dp"
+        android:numColumns="3"
+        android:paddingBottom="@dimen/dp_10"
+        android:paddingLeft="8dp"
+        android:paddingRight="8dp"
+        android:paddingTop="@dimen/dp_10" />
+
+</LinearLayout>

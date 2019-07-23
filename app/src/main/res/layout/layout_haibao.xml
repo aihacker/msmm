@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <ScrollView
+        android:id="@+id/scroll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_white0"
+            android:orientation="vertical">
+
+
+            <RelativeLayout
+                android:id="@+id/rl_goods"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/haibao_gradual"
+                android:orientation="vertical"
+                android:paddingBottom="12dp">
+
+                <ImageView
+                    android:id="@+id/goodsPic"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="7dp"
+                    android:layout_marginRight="7dp"
+                    android:layout_marginTop="13dp"
+                    android:adjustViewBounds="true"
+                    android:src="@mipmap/ic_launcher" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignLeft="@+id/goodsPic"
+                    android:layout_alignRight="@+id/goodsPic"
+                    android:layout_below="@+id/goodsPic"
+                    android:layout_marginLeft="2dp"
+                    android:layout_marginRight="2dp"
+                    android:layout_marginTop="6dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/tv_name"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:drawablePadding="5dp"
+                        android:ellipsize="end"
+                        android:gravity="center_vertical"
+                        android:lineSpacingMultiplier="1.2"
+                        android:maxLines="2"
+                        android:text="煲仔饭"
+                        android:textColor="@color/First"
+                        android:textSize="8sp" />
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/tv_yishou"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:singleLine="true"
+                            android:text="已售:3.45万"
+                            android:textColor="@color/backgroud"
+                            android:textSize="7sp" />
+
+                        <RelativeLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true">
+
+                            <TextView
+                                android:id="@+id/tv_total"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="￥39.9"
+                                android:textColor="@color/backgroud"
+                                android:textSize="7sp" />
+
+                            <View
+                                android:layout_width="30dp"
+                                android:layout_height="1dp"
+                                android:layout_alignRight="@+id/tv_total"
+                                android:layout_centerVertical="true"
+                                android:background="#ff999999" />
+                        </RelativeLayout>
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="14dp"
+                                android:layout_height="11dp"
+                                android:background="@drawable/brand_frgone_quan"
+                                android:gravity="center"
+                                android:text="券"
+                                android:textColor="@color/white"
+                                android:textSize="7sp" />
+
+                            <TextView
+                                android:id="@+id/tv_quancount"
+                                android:layout_width="33dp"
+                                android:layout_height="11dp"
+                                android:background="@drawable/brand_frgone_money"
+                                android:gravity="center"
+                                android:text=""
+                                android:textColor="@color/white"
+                                android:textSize="7sp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="￥"
+                                android:textColor="@color/dialog_text_color"
+                                android:textSize="7sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/tv_nowprice"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="29"
+                                android:textColor="@color/dialog_text_color"
+                                android:textSize="16sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="券后"
+                                android:textColor="@color/dialog_text_color"
+                                android:textSize="7sp" />
+                        </LinearLayout>
+
+                    </RelativeLayout>
+
+
+                </LinearLayout>
+
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/rl_goods"
+                android:layout_alignRight="@+id/rl_goods"
+                android:layout_below="@+id/rl_goods"
+                android:layout_marginBottom="8dp"
+                android:layout_marginLeft="12dp"
+                android:layout_marginRight="14dp"
+                android:layout_marginTop="10dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="28dp"
+                        android:layout_height="28dp"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/maishou" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="8dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="买手妈妈"
+                            android:textColor="@color/text_deep"
+                            android:textSize="10sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="3dp"
+                            android:text="高佣才是硬道理"
+                            android:textColor="@color/six"
+                            android:textSize="7sp" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+
+                    <ImageView
+                        android:id="@+id/iv_erweimanew"
+                        android:layout_width="46dp"
+                        android:layout_height="46dp"
+                        android:scaleType="fitXY"
+                        android:src="@mipmap/ic_launcher" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="3dp"
+                        android:text="长按识别二维码"
+                        android:textColor="@color/backgroud"
+                        android:textSize="6sp" />
+                </LinearLayout>
+            </LinearLayout>
+
+        </RelativeLayout>
+    </ScrollView>
+
+</LinearLayout>

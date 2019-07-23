@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        >
+
+        <ImageView
+            android:id="@+id/ll_beijing"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#50000000" />
+
+    </LinearLayout>
+
+
+
+
+
+    <RelativeLayout
+          android:layout_width="fill_parent"
+          android:background="@color/white"
+          android:padding="5dp"
+          android:layout_height="wrap_content">
+
+          <TextView
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:textSize="18sp"
+              android:padding="5dp"
+              android:id="@+id/quxiao"
+              android:textColor="@color/black"
+              android:text="取消"/>
+
+          <TextView
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:layout_alignParentRight="true"
+              android:padding="5dp"
+              android:id="@+id/queding"
+              android:textColor="@color/black"
+              android:textSize="18sp"
+              android:text="保存"/>
+
+
+      </RelativeLayout>
+
+      <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+
+        <com.d2956987215.mow.widgets.views.WheelView
+            android:id="@+id/id_province"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" >
+        </com.d2956987215.mow.widgets.views.WheelView>
+
+          <com.d2956987215.mow.widgets.views.WheelView
+            android:id="@+id/id_city"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" >
+        </com.d2956987215.mow.widgets.views.WheelView>
+
+        <com.d2956987215.mow.widgets.views.WheelView
+            android:id="@+id/id_district"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" >
+        </com.d2956987215.mow.widgets.views.WheelView>
+    </LinearLayout>
+
+</LinearLayout>

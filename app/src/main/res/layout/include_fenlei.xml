@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_marginTop="20dp"
+    app:layout_scrollFlags="scroll"
+    android:orientation="horizontal">
+
+
+    <LinearLayout
+        android:id="@+id/la_taobao"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:gravity="center"
+        app:layout_scrollFlags="scroll"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/iv_taobao"
+            android:layout_width="46dp"
+            android:layout_height="46dp"
+            app:layout_scrollFlags="scroll"
+            android:src="@mipmap/da_tu" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            tools:text="淘宝"
+            android:id="@+id/tv_name"
+            app:layout_scrollFlags="scroll"
+            android:textColor="#ff333333"
+            android:textSize="13sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="最高返90%"
+            app:layout_scrollFlags="scroll"
+            android:textColor="#ff666666"
+            android:textSize="10sp" />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/la_jingdong"
+        app:layout_scrollFlags="scroll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/iv_jingdong"
+            android:layout_width="46dp"
+            android:layout_height="46dp"
+            app:layout_scrollFlags="scroll"
+            android:src="@mipmap/da_tu" />
+
+        <TextView
+            android:id="@+id/tv_name2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            tools:text="京东"
+            app:layout_scrollFlags="scroll"
+            android:textColor="#ff333333"
+            android:textSize="13sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="最高返90%"
+            app:layout_scrollFlags="scroll"
+            android:textColor="#ff666666"
+            android:textSize="10sp" />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/la_pinduoduo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        app:layout_scrollFlags="scroll"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/iv_pinduo"
+            android:layout_width="46dp"
+            android:layout_height="46dp"
+            app:layout_scrollFlags="scroll"
+            android:src="@mipmap/da_tu" />
+
+        <TextView
+            android:id="@+id/tv_pinduoduo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            tools:text="拼多多"
+            app:layout_scrollFlags="scroll"
+            android:textColor="#ff333333"
+            android:textSize="13sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="最高返90%"
+            app:layout_scrollFlags="scroll"
+            android:textColor="#ff666666"
+            android:textSize="10sp" />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/la_ziying"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:gravity="center"
+        app:layout_scrollFlags="scroll"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/iv_ziying"
+            android:layout_width="46dp"
+            android:layout_height="46dp"
+            app:layout_scrollFlags="scroll"
+            android:src="@mipmap/da_tu" />
+
+        <TextView
+            android:id="@+id/tv_ziying"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            tools:text="买手自营"
+            app:layout_scrollFlags="scroll"
+            android:textColor="#ff333333"
+            android:textSize="13sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="最高返90%"
+            app:layout_scrollFlags="scroll"
+            android:textColor="#ff666666"
+            android:textSize="10sp" />
+
+
+    </LinearLayout>
+
+
+</LinearLayout>

@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?><!-- 闹铃起闹时弹出对话框的布局文件 -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/dialog_alarmAlert"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="40dp"
+    android:layout_marginRight="40dp"
+    android:gravity="center"
+    android:orientation="vertical">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_whrite"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/iv_close"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="10dp"
+            android:padding="5dp"
+            android:src="@mipmap/auth_taobao_close" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="18dp"
+            android:src="@mipmap/auth_taobao_logo" />
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="24dp"
+            android:text="申请淘宝授权"
+            android:textColor="#ff333333"
+            android:textSize="17sp" />
+
+        <TextView
+            android:id="@+id/tv_des"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginLeft="18dp"
+            android:layout_marginRight="18dp"
+            android:layout_marginTop="14dp"
+            android:text="应淘宝要求，获得返佣前请先进行
+官方授权！
+买手妈妈APP是淘宝联盟“官方优质
+合作伙伴”，查优惠、赚佣金，使用
+更安心！"
+            android:textColor="#ff333333"
+            android:textSize="14sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="18dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="18dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tv_cancel"
+                android:layout_width="0dp"
+                android:layout_height="37dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_weight="1"
+                android:background="@drawable/auth_cancel"
+                android:gravity="center"
+                android:text="了解详情"
+                android:textColor="#999999"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/tv_auth"
+                android:layout_width="0dp"
+                android:layout_height="37dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginLeft="10dp"
+                android:layout_weight="1"
+                android:background="@drawable/auth_ok"
+                android:gravity="center"
+                android:text="前往淘宝授权"
+                android:textColor="#ffffffff"
+                android:textSize="15sp" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>
+
+
+
+
+
+
+
+
+
+
+
+
+

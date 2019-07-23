@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include
+        layout="@layout/include_header"/>
+
+    <android.support.design.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <android.support.design.widget.AppBarLayout
+            android:id="@+id/jianshu_appbar_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:elevation="0dp">
+
+            <ImageView
+                android:id="@+id/id_stickynavlayout_topview"
+                android:layout_width="match_parent"
+                android:layout_height="130dp"
+                android:scaleType="centerCrop"
+                android:src="@mipmap/da_tu"
+                app:layout_scrollFlags="scroll" />
+
+            <!--菜单栏-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:gravity="center"
+                android:orientation="horizontal"
+                app:layout_scrollFlags="scroll">
+
+                <LinearLayout
+                    android:id="@+id/one_key_share"
+                    android:layout_width="0dp"
+                    android:layout_height="50dp"
+                    android:layout_weight="1"
+                    android:background="@color/white"
+                    android:gravity="center">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:drawablePadding="10dp"
+                        android:gravity="center"
+                        android:text="一键推广"
+                        android:textColor="@color/dark"
+                        android:textSize="12dp" />
+                </LinearLayout>
+
+
+                <View
+                    android:layout_width="1px"
+                    android:layout_height="30dp"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginTop="5dp"
+                    android:background="#cacaca" />
+
+
+                <LinearLayout
+                    android:id="@+id/down_link_share"
+                    android:layout_width="0dp"
+                    android:layout_height="50dp"
+                    android:layout_weight="1"
+                    android:background="@color/white"
+                    android:gravity="center">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:drawablePadding="10dp"
+                        android:gravity="center"
+                        android:text="下载链接"
+                        android:textColor="@color/dark"
+                        android:textSize="12dp" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="10dp"
+                app:layout_scrollFlags="scroll"
+                android:background="@color/gray"/>
+
+
+
+            <!--推广标题-->
+            <LinearLayout
+                android:id="@+id/id_stickynavlayout_indicator"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:background="@drawable/bg_grey"
+                android:gravity="center_vertical">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dp_10"
+                    android:layout_weight="1"
+                    android:text="我的推广"
+                    android:textStyle="bold"
+                    android:textColor="@color/dark"
+                    android:textSize="15dp" />
+
+                <ImageView
+                    android:id="@+id/extension_sort"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/dp_10"
+                    android:src="@mipmap/da_tu" />
+            </LinearLayout>
+
+            <!--列表表头-->
+            <LinearLayout
+                android:id="@+id/my_extension_column"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:background="@drawable/bg_grey"
+                android:gravity="center">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="微信"
+                    android:textColor="@color/dark"
+                    android:textSize="12dp" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="手机号码"
+                    android:textColor="@color/dark"
+                    android:textSize="12dp" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="操作"
+                    android:textColor="@color/dark"
+                    android:textSize="12dp" />
+            </LinearLayout>
+        </android.support.design.widget.AppBarLayout>
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/extension_recyclerview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        </android.support.v7.widget.RecyclerView>
+
+
+    </android.support.design.widget.CoordinatorLayout>
+</LinearLayout>

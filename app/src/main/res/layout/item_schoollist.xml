@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/ll_item"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="12dp"
+        android:layout_marginRight="12dp"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:paddingBottom="15dp"
+        android:paddingTop="15dp">
+
+        <com.d2956987215.mow.widgets.ShapedImageView
+            android:id="@+id/iv_pic"
+            android:layout_width="99dp"
+            android:layout_height="79dp"
+            android:scaleType="centerCrop"
+            android:src="@mipmap/ic_launcher"
+            app:round_radius="5dp"
+            app:shape_mode="round_rect" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="6dp"
+            android:layout_marginLeft="10dp"
+            android:layout_weight="1"
+            android:layout_marginTop="9dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:lineSpacingMultiplier="1.2"
+                android:textColor="@color/text_deep"
+                android:textSize="14sp" />
+
+
+            <TextView
+                android:id="@+id/tv_time"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:textColor="@color/backgroud"
+                android:textSize="13sp" />
+
+        </RelativeLayout>
+
+
+        <TextView
+            android:id="@+id/tv_count"
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"
+            android:background="@drawable/bg_red"
+            android:drawableLeft="@mipmap/circle_icon_share"
+            android:drawablePadding="5dp"
+            android:gravity="center"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:text="0"
+            android:textColor="#FFFD4964"
+            android:textSize="12dp" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="#F8F8F8" />
+
+
+</LinearLayout>

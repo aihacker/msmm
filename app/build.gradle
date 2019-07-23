@@ -1,0 +1,320 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-android'
+//apply plugin: 'com.mob.sdk'
+
+android {
+    compileSdkVersion 27
+    defaultConfig {
+        applicationId "com.d2956987215.mow"
+        minSdkVersion 17
+        targetSdkVersion 27
+        versionCode 32
+        versionName "1.0.5"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        vectorDrawables.useSupportLibrary = true
+        multiDexEnabled true
+        signingConfig signingConfigs.debug
+        // 取消掉系统对.9图片的检查
+        aaptOptions.cruncherEnabled = false
+        aaptOptions.useNewCruncher = false
+
+        manifestPlaceholders = [
+                umengkey      : "5c07b727b465f52a53000248",
+                qqappid       : "tencent1106554516",
+                JPUSH_PKGNAME : "com.d2956987215.mow",
+                JPUSH_APPKEY  : "c959599811d00a58490f21b2", //JPush上注册的包名对应的appkey.
+                JPUSH_CHANNEL : "developer-default", //暂时填写默认值即可.
+
+                XIAOMI_APPKEY : "MI‐5601790864279",//小米平台注册的appkey
+                XIAOMI_APPID  : "MI‐2882303761517908279",//小米平台注册的appid
+                HUAWEI_APPID  : "100562449",//华为平台注册的appid
+                OPPO_APPKEY   : "OP‐cb191f00edef4f3686ade70455ea4049", // OPPO平台注册的appkey
+                OPPO_APPID    : "OP‐3686668", // OPPO平台注册的appid
+                OPPO_APPSECRET: "OP‐f0566e4235f64616b5c0165bbff03296",//OPPO平台注册的appsecret
+                VIVO_APPKEY   : "e1946598-2a35-4627-ae46-0fb8ddd6712c", // VIVO平台注册的appkey
+                VIVO_APPID    : "12449", // VIVO平台注册的appid
+        ]
+
+        ndk {
+            //设置支持的SO库架构（开发者可以根据需要，选择一个或多个平台的so）
+            abiFilters "armeabi", "armeabi-v7a", "arm64-v8a", "x86", "arm64-v8a", "x86_64"
+//            abiFilters "armeabi"
+        }
+
+
+    }
+    sourceSets {
+        main {
+            jniLibs.srcDirs = ['libs']
+        }
+    }
+//    dexOptions {
+//        incremental true
+//        javaMaxHeapSize "4g"
+//    }
+    lintOptions {
+        checkReleaseBuilds false
+        // Or, if you prefer, you can continue to check for errors in release builds,
+        // but continue the build even when errors are found:
+        abortOnError false
+    }
+
+//    MobSDK {
+//        appKey "2832157822000"
+//        appSecret "8c4115a328f97ce9238cb9a98c53cbd8"
+//        ShareSDK {
+//            //平台配置信息
+//            devInfo {
+//                SinaWeibo {
+//                    appKey "1177513179"
+//                    appSecret "a774572b5aa2a09cf83d415f52ae230c"
+//                    callbackUri "http://www.sharesdk.cn"
+//                    shareByAppClient false
+//                }
+//                WechatMoments {
+//                    appId "wx07bf5ccf131324cc"
+//                    appSecret "855ae7a34a3f2b9c04a2e76c3afe0218"
+//                    bypassApproval false
+//
+//                }
+//                Wechat {
+//                    appId "wx07bf5ccf131324cc"
+//                    appSecret "855ae7a34a3f2b9c04a2e76c3afe0218"
+//                    bypassApproval false
+//                    miniprogramType 2
+//                    shareByAppClient true
+//                    withShareTicket true
+//                    enable true
+//                }
+//                QQ {
+//                    appId "1106554516"
+//                    appKey "O57LU6T58lrZqarq"
+//                    bypassApproval false
+//                    shareByAppClient true
+//                }
+//                QZone {
+//                    appId "1106554516"
+//                    appKey "O57LU6T58lrZqarq"
+//                    bypassApproval false
+//                    shareByAppClient true
+//                }
+//
+//            }
+//        }
+//    }
+    signingConfigs {
+        debug {
+            keyAlias 'k2956987215'
+            keyPassword '123456'
+            storeFile file('../02d135ecdab3fd346502fd2787d8d29f.keystore')
+            storePassword '123456'
+        }
+        release {
+            keyAlias 'k2956987215'
+            keyPassword '123456'
+            storeFile file('../02d135ecdab3fd346502fd2787d8d29f.keystore')
+            storePassword '123456'
+        }
+    }
+
+    buildTypes {
+        release {
+            multiDexEnabled true
+            minifyEnabled false
+            //移除无用的资源文件
+            shrinkResources false
+            zipAlignEnabled true
+            debuggable true
+            jniDebuggable true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
+            signingConfig signingConfigs.debug
+        }
+        debug {
+            minifyEnabled false
+            debuggable true
+        }
+
+
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+//        incremental false
+    }
+
+
+
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    androidTestImplementation('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+
+    //rxJava start
+    implementation files('libs/json_simple-1.1.jar')
+    implementation project(path: ':galleryfinal')
+    implementation 'com.android.support:appcompat-v7:27.0.0'
+    implementation 'com.bigkoo:convenientbanner:2.0.5'
+    implementation 'de.hdodenhof:circleimageview:2.2.0'
+    implementation 'com.scwang.smartrefresh:SmartRefreshLayout:1.0.4'
+    implementation 'com.scwang.smartrefresh:SmartRefreshHeader:1.0.4'//没有使用特殊Header，可以不加这行
+    implementation 'org.greenrobot:eventbus:3.1.1'
+    implementation 'com.android.support.constraint:constraint-layout:1.0.2'
+//    implementation 'com.google.code.gson:gson:2.8.1'
+//    implementation 'com.google.code.gson:gson-parent:2.8.1'
+    implementation 'com.github.bumptech.glide:glide:3.7.0'
+    implementation 'io.reactivex.rxjava2:rxjava:2.0.7'
+    implementation 'io.reactivex.rxjava2:rxandroid:2.0.1'
+    implementation 'com.squareup.retrofit2:retrofit:2.2.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.2.0'
+    implementation 'com.squareup.retrofit2:adapter-rxjava2:2.2.0'
+    implementation 'com.jakewharton.rxbinding:rxbinding:0.4.0'
+    implementation 'com.android.support:design:27.1.0'
+    implementation 'com.android.support:support-vector-drawable:27.0.2'
+    implementation 'com.android.support:cardview-v7:27.0.2'
+    implementation 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.34'
+    implementation 'com.github.hackware1993:MagicIndicator:1.5.0'
+//    implementation 'com.jakewharton:butterknife:8.8.1'
+//    annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
+
+    implementation 'com.jakewharton:butterknife:8.8.1'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
+
+    implementation 'com.hyman:flowlayout-lib:1.1.2'
+    implementation 'com.iarcuschin:simpleratingbar:0.1.5'
+    testImplementation 'junit:junit:4.12'
+
+    implementation files('libs/AMap_Location_V3.5.0_20170731.jar')
+    implementation 'com.squareup.okhttp3:logging-interceptor:3.8.1'
+    implementation files('libs/fastjson-1.1.34.android.jar')
+    implementation 'com.nostra13.universalimageloader:universal-image-loader:1.9.5'
+    // compile 'com.tencent.mm.opensdk:wechat-sdk-android-with-mta:+'
+    implementation 'com.github.Bakumon:StatusLayoutManager:1.0.4'
+    implementation 'com.zhy:base-rvadapter:3.0.3'
+    implementation 'com.mylhyl:zxingscanner:2.1.1'
+
+    //fastjson
+
+    //    //支付
+
+    //    compile 'com.alibaba.alipay:alipaySingle:20160825@jar'
+
+    //    //登陆
+
+    //    compile 'com.ali.auth.sdk:alibabauth_core:1.4.3@jar'
+
+    //    compile 'com.ali.auth.sdk:alibabauth_ui:1.4.3@aar'
+
+    //    compile 'com.ali.auth.sdk:alibabauth_ext:1.4.3@jar'
+
+    //    //【可选】仅供特殊合作伙伴使用
+
+    //    compile 'com.ali.auth.sdk:alibabauth_accountlink:1.1.4@jar'
+
+    //    //安全基础
+
+    //    compile 'com.taobao.android:securityguardaar3:5.1.81@aar'
+
+    //    //【可选】安全高级，如使用了发放红包、优惠券高级功能，则必须引入
+
+    //    compile 'com.taobao.android:securitybodyaar3:5.1.25@aar'
+
+    //    //Mtop网关
+
+    //    compile 'com.taobao.android:mtopsdk_allinone_open:1.2.2.4@jar'
+
+    //    //applink
+
+    //    compile 'com.taobao.android:alibc_applink:2.0.0.9@jar'
+
+    //    //UT
+
+    //    compile 'com.taobao.android:utdid4all:1.1.5.3_proguard@jar'
+
+    //    compile 'com.alibaba.mtl:app-monitor-sdk:2.5.1.3_for_bc_proguard@jar'
+
+    //    //电商SDK
+
+    //    compile 'com.alibaba.sdk.android:alibc_trade_sdk:3.1.1.11@aar'
+
+    //支付
+    implementation 'com.alibaba.alipay:alipaySingle:20160825@jar'
+
+    //登陆
+    implementation 'com.ali.auth.sdk:alibabauth_core:1.4.3@jar'
+    implementation 'com.ali.auth.sdk:alibabauth_ui:1.4.3@aar'
+    implementation 'com.ali.auth.sdk:alibabauth_ext:1.4.3@jar'
+
+    //安全基础
+    implementation 'com.taobao.android:securityguardaar3:5.1.81@aar'
+
+    //Mtop网关
+    implementation 'com.taobao.android:mtopsdk_allinone_open:1.2.2.4@jar'
+
+    //applink
+    implementation 'com.alibaba.sdk.android:alibc_link_partner:1.1.0.0'
+
+    //UT
+    implementation 'com.taobao.android:utdid4all:1.1.5.3_proguard@jar'
+    implementation 'com.alibaba.mtl:app-monitor-sdk:2.5.1.3_for_bc_proguard@jar'
+
+    //联盟SDK
+    implementation 'com.alimama.tunion.sdk:tuniontradesdk:0.3.2'
+
+    //电商SDK
+    implementation 'com.alibaba.sdk.android:alibc_trade_common:3.1.1.206'
+    implementation 'com.alibaba.sdk.android:alibc_trade_biz:3.1.1.206'
+    implementation 'com.alibaba.sdk.android:alibc_trade_sdk:3.1.1.206'
+    implementation 'com.github.hotchemi:permissionsdispatcher:3.1.0'
+    annotationProcessor 'com.github.hotchemi:permissionsdispatcher-processor:3.1.0'
+    implementation 'com.google.zxing:core:3.3.0'
+    implementation 'com.blankj:utilcode:1.23.2'
+    implementation 'org.sufficientlysecure:html-textview:3.6'
+    implementation 'com.github.BolexLiu:PressScanCode:v1.0.0'
+    implementation 'com.tencent.bugly:crashreport_upgrade:1.3.7'
+
+    //其中latest.release指代最新版本号，也可以指定明确的版本号，例如1.2.0
+
+    //    compile 'com.tencent.bugly:nativecrashreport:3.3.1'
+
+    //其中latest.release指代最新版本号，也可以指定明确的版本号，例如2.2.0
+    implementation 'org.sufficientlysecure:html-textview:3.6'
+    //启动角标
+    implementation 'me.leolin:ShortcutBadger:1.1.22@aar'
+    implementation 'com.android.support:multidex:1.0.1'
+
+    //友盟
+    //友盟统计、分享
+    implementation 'com.umeng.umsdk:analytics:7.5.4'
+    implementation 'com.umeng.umsdk:common:1.5.4'
+    implementation 'com.umeng.umsdk:share-core:6.9.4'
+    implementation 'com.umeng.umsdk:share-board:6.9.4'
+    implementation 'com.umeng.umsdk:share-qq:6.9.4'
+    implementation 'com.umeng.umsdk:share-wx:6.9.4'
+    implementation 'com.umeng.umsdk:share-sina:6.9.4'
+
+    implementation 'com.github.zrunker:ZTextView:v1.0.2'
+
+    //极光厂商通道
+    implementation 'cn.jiguang.sdk:jpush:3.3.0'  // 此处以JPush 3.3.0 版本为例。
+    implementation 'cn.jiguang.sdk:jcore:2.0.1'  // 此处以JCore 2.0.1 版本为例。
+    implementation 'cn.jiguang.sdk.plugin:xiaomi:3.3.0'//此版本插件仅支持JPushSDK3.2.0及以上版本
+    implementation 'cn.jiguang.sdk.plugin:huawei:3.3.0'//此版本插件仅支持JPushSDK3.2.0及以上版本
+    implementation 'cn.jiguang.sdk.plugin:oppo:3.3.0'//此版本插件仅支持JPushSDK3.1.8及以上版本
+    implementation 'cn.jiguang.sdk.plugin:vivo:3.3.0'//此版本插件仅支持JPushSDK3.2.0及以上版本
+
+//权限的申请
+    implementation 'com.github.tbruyelle:rxpermissions:0.10.2'
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation 'com.github.lkxiaojian:UtilsLibrary:v1.0'
+
+//    implementation 'com.github.cirno-poi:VerifyEditText:1.0.0'
+}
+repositories {
+    mavenCentral()
+}

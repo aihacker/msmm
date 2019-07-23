@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="@color/white"
+    style="@style/transparent_statusbar_fit"
+    android:layout_height="match_parent">
+
+    <include
+        android:id="@+id/la_titile"
+        layout="@layout/include_header" />
+
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recycler_hot_product"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/la_titile"
+        android:layout_gravity="center"
+        android:layout_marginBottom="45dp"></android.support.v7.widget.RecyclerView>
+
+
+    <TextView
+        android:id="@+id/tv_quxiao"
+        android:layout_width="80dp"
+        android:layout_height="30dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="25dp"
+        android:background="@drawable/bg_red"
+        android:gravity="center"
+        android:text="取消"
+        android:textColor="#ff333333"
+        android:textSize="13sp" />
+
+    <TextView
+        android:id="@+id/tv_couut"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="25dp"
+        android:layout_toRightOf="@+id/tv_quxiao"
+        android:layout_weight="1"
+        android:background="@drawable/bg_redchun"
+        android:gravity="center"
+        android:text="立即发送(0)"
+        android:textColor="@color/white"
+        android:textSize="14dp" />
+
+
+</RelativeLayout>

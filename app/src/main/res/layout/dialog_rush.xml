@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="250dp"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:gravity="center"
+        android:text="即将开始"
+        android:textColor="@color/dialog_text_color"
+        android:textSize="@dimen/sp_16" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/dialog_text_color" />
+
+    <TextView
+        android:id="@+id/tv_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:layout_marginTop="25dp"
+        android:layout_marginBottom="23dp"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        android:text="此时间段时间未到，还未开抢"
+        android:textColor="@color/First"
+        android:textSize="13sp" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/dialog_line_color" />
+
+    <TextView
+        android:id="@+id/tv_ok"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:gravity="center"
+        android:text="知道啦"
+        android:textColor="@color/dialog_text_color"
+        android:textSize="@dimen/sp_14" />
+</LinearLayout>

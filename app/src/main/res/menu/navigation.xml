@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/navigation_home"
+        android:enabled="true"
+        android:icon="@drawable/selector_home"
+        app:showAsAction="ifRoom"
+        android:title="@string/home" />
+
+    <item
+        android:id="@+id/navigation_product"
+        android:iconTint="@color/c47"
+        android:enabled="true"
+        android:icon="@drawable/selector_fenlei"
+        app:showAsAction="ifRoom"
+        android:title="@string/zhoubian" />
+
+    <item
+        android:id="@+id/navigation_shop_car"
+        android:iconTint="@color/c47"
+        android:enabled="true"
+        android:icon="@drawable/selector_quan"
+        app:showAsAction="ifRoom"
+        android:title="@string/luntan" />
+
+    <item
+        android:id="@+id/navigation_mine"
+        android:enabled="true"
+        android:icon="@drawable/selector_wode"
+        app:showAsAction="ifRoom"
+        android:title="@string/mine" />
+</menu>

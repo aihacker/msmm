@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    style="@style/transparent_statusbar_fit"
+    android:background="@color/white"
+    android:orientation="vertical"
+    tools:context="com.d2956987215.mow.activity.mine.PersonalInfoActivity">
+
+    <include layout="@layout/include_header" />
+
+    <RelativeLayout
+        android:id="@+id/rl_head"
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:layout_marginTop="11dp"
+        android:background="@color/white">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="11dp"
+            android:text="@string/head"
+            android:textColor="@color/three"
+            android:textSize="15sp" />
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/circle_head"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="12dp"
+            android:src="@mipmap/head" />
+    </RelativeLayout>
+
+    <include layout="@layout/divider_view_padding_10" />
+
+    <RelativeLayout
+        android:id="@+id/rl_nickname"
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:background="@color/white">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="11dp"
+            android:text="@string/nickname"
+            android:textColor="@color/three"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/tv_nickname"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="12dp"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:maxWidth="200dp"
+            android:text="Super Man"
+            android:textColor="@color/d3"
+            android:textSize="15dp" />
+    </RelativeLayout>
+    <include layout="@layout/divider_view_padding_10"/>
+    <RelativeLayout
+        android:id="@+id/rl_xingbie"
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:background="@color/white">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="11dp"
+            android:text="性别"
+            android:textColor="@color/three"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/tv_xingbie"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="12dp"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:maxWidth="200dp"
+            android:text="男"
+            android:textColor="@color/d3"
+            android:textSize="15dp" />
+    </RelativeLayout>
+    <include layout="@layout/divider_view_padding_10"/>
+    <RelativeLayout
+        android:id="@+id/rl_phone"
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:background="@color/white">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="11dp"
+            android:text="手机号"
+            android:textColor="@color/three"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/tv_phone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="12dp"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:maxWidth="200dp"
+            android:text=""
+            android:textColor="@color/d3"
+            android:textSize="15dp" />
+    </RelativeLayout>
+    <Button
+        android:id="@+id/bt_save"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="25dp"
+        android:background="@drawable/bg_login"
+        android:text="@string/save"
+        android:textColor="@color/white"
+        android:textSize="15sp" />
+</LinearLayout>

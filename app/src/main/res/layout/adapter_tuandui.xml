@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp">
+
+        <com.d2956987215.mow.widgets.CircleImageView
+            android:id="@+id/head_img"
+            android:layout_width="43dp"
+            android:layout_height="43dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="18dp"
+            android:src="@mipmap/head" />
+
+        <TextView
+            android:id="@+id/tv_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/tv_id"
+            android:layout_alignTop="@+id/head_img"
+            android:layout_marginLeft="10dp"
+            android:text="星空"
+            android:textColor="#ff333333"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/tv_id"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_name"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_toRightOf="@+id/head_img"
+            android:text="学员ID：283861"
+            android:textColor="#ff666666"
+            android:textSize="12sp" />
+
+
+        <TextView
+            android:id="@+id/tv_shoucang"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:background="@drawable/bg_red"
+            android:paddingBottom="3dp"
+            android:paddingLeft="8dp"
+            android:paddingRight="8dp"
+            android:paddingTop="3dp"
+            android:text="已开通"
+            android:textColor="#fffd4964"
+            android:textSize="13sp" />
+
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginTop="18dp">
+
+        <TextView
+            android:id="@+id/tv_zhuce"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="注册时间:"
+            android:textColor="#ff666666"
+            android:textSize="10sp" />
+
+        <TextView
+            android:id="@+id/tv_guoqi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:text="过期时间:"
+            android:textColor="#ff666666"
+            android:textSize="10sp" />
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        android:layout_marginTop="10dp"
+        android:background="@color/line_chang" />
+
+</LinearLayout>

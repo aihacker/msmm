@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?><!-- 闹铃起闹时弹出对话框的布局文件 -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/dialog_alarmAlert"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/transparent"
+    android:orientation="vertical">
+
+    <ImageView
+        android:scaleType="centerCrop"
+        android:src="@drawable/update_img_succeed"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_weight="1"/>
+
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:background="@color/transparent"/>
+
+
+</LinearLayout>
+
+
+
+
+
+
+
+
+
+
+
+
+
