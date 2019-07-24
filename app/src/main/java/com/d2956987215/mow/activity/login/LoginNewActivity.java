@@ -1,5 +1,6 @@
 package com.d2956987215.mow.activity.login;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
@@ -22,8 +23,8 @@ import com.blankj.utilcode.util.StringUtils;
 import com.blankj.utilcode.util.ToastUtils;
 import com.d2956987215.mow.R;
 import com.d2956987215.mow.activity.APP;
-import com.d2956987215.mow.activity.BaseActivity;
 import com.d2956987215.mow.activity.MainActivity;
+import com.d2956987215.mow.activity.kotlin.BaseActivity;
 import com.d2956987215.mow.bean.AreaBean;
 import com.d2956987215.mow.bean.CheckMobileBean;
 import com.d2956987215.mow.constant.Const;
@@ -31,6 +32,7 @@ import com.d2956987215.mow.dialog.RegistDialog;
 
 import com.d2956987215.mow.eventbus.RefreshListData;
 
+import com.d2956987215.mow.mvp.p.ParsingPresenter;
 import com.d2956987215.mow.rxjava.Request;
 import com.d2956987215.mow.rxjava.Result;
 import com.d2956987215.mow.rxjava.RxJavaUtil;
@@ -48,6 +50,7 @@ import com.umeng.socialize.bean.SHARE_MEDIA;
 import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
 import org.greenrobot.eventbus.ThreadMode;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -87,17 +90,17 @@ public class LoginNewActivity extends BaseActivity {
     @BindView(R.id.bt_select_area)
     Button btSelectArea;
     private AlibcLogin alibcLogin;
+    private ParsingPresenter parsingPresenter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         Density.setDensity(APP.getApplication(), this);
         super.onCreate(savedInstanceState);
-
-//        super.onCreate(savedInstanceState);
-        ButterKnife.bind(this);
-        setOnclick();
-        EventBus.getDefault().register(this);
-        Const.area = "86";
+        setContentView(R.layout.activity_login_new);
+//        ButterKnife.bind(this);
+//        setOnclick();
+//        EventBus.getDefault().register(this);
+//        Const.area = "86";
     }
 
     private void setOnclick() {
@@ -134,16 +137,16 @@ public class LoginNewActivity extends BaseActivity {
             }
         });
     }
-
-    @Override
-    protected int getLayoutId() {
-        return R.layout.activity_login_new;
-    }
-
-    @Override
-    public void show(Object obj) {
-
-    }
+//
+//    @Override
+//    protected int getLayoutId() {
+//        return R.layout.activity_login_new;
+//    }
+//
+//    @Override
+//    public void show(Object obj) {
+//
+//    }
 
     @OnClick({R.id.rl_back, R.id.bt_next, R.id.ll_message, R.id.ll_wx, R.id.ll_tb, R.id.ll_phone, R.id.ll_login, R.id.tv_xy, R.id.iv_del_phone, R.id.bt_select_area})
     public void onViewClicked(View view) {
@@ -199,7 +202,7 @@ public class LoginNewActivity extends BaseActivity {
 
                 break;
             case R.id.tv_xy:
-                startActivity(new Intent(this,WebViewActivity.class).putExtra("url",Const.XYYRL).putExtra("title","买手妈妈协议"));
+                startActivity(new Intent(this, WebViewActivity.class).putExtra("url", Const.XYYRL).putExtra("title", "买手妈妈协议"));
                 break;
             case R.id.iv_del_phone:
                 etPhoneNum.setText("");
@@ -222,35 +225,36 @@ public class LoginNewActivity extends BaseActivity {
         map.put("code", code);
         map.put("time", time);
         Const.phone = s;
-        new Request<CheckMobileBean>().request(RxJavaUtil.xApi().CheckMobile(map), "手机号验证", this, true, new Result<CheckMobileBean>() {
-            @Override
-            public void get(CheckMobileBean response) {
-                if (response.getStatus_code() == 200) {
-                    //已注册
-                    if (response.getData().getIsregister() == 1) {
-                        Intent intent = new Intent(LoginNewActivity.this, PasswordActivity.class);
-                        intent.putExtra("phone", s);
-                        intent.putExtra("area", tvArea.getText().toString());
-                        startActivity(intent);
-                    } else {
-                        //未注册
-                        RegistDialog dialog = new RegistDialog(LoginNewActivity.this, () -> {
-
-                            Intent intent = new Intent(LoginNewActivity.this, RegisterActivity1.class);
-                            intent.putExtra("phone", s);
-                            startActivity(intent);
-
-                        });
-                        dialog.show();
-
-                    }
-
-                } else {
-                    Utils.ToastShort(LoginNewActivity.this, "请求错误");
-                }
-
-            }
-        });
+        parsingPresenter.start("CheckMobile", "CheckMobile", "", map);
+//        new Request<CheckMobileBean>().request(RxJavaUtil.xApi().CheckMobile(map), "手机号验证", this, true, new Result<CheckMobileBean>() {
+//            @Override
+//            public void get(CheckMobileBean response) {
+//                if (response.getStatus_code() == 200) {
+//                    //已注册 CheckMobileBean CheckMobile
+//                    if (response.getData().getIsregister() == 1) {
+//                        Intent intent = new Intent(LoginNewActivity.this, PasswordActivity.class);
+//                        intent.putExtra("phone", s);
+//                        intent.putExtra("area", tvArea.getText().toString());
+//                        startActivity(intent);
+//                    } else {
+//                        //未注册
+//                        RegistDialog dialog = new RegistDialog(LoginNewActivity.this, () -> {
+//
+//                            Intent intent = new Intent(LoginNewActivity.this, RegisterActivity1.class);
+//                            intent.putExtra("phone", s);
+//                            startActivity(intent);
+//
+//                        });
+//                        dialog.show();
+//
+//                    }
+//
+//                } else {
+//                    Utils.ToastShort(LoginNewActivity.this, "请求错误");
+//                }
+//
+//            }
+//        });
     }
 
     @Subscribe(threadMode = ThreadMode.MAIN)
@@ -389,12 +393,12 @@ public class LoginNewActivity extends BaseActivity {
     };
 
 
-    private void wxLogin( Map<String, String> data) {
+    private void wxLogin(Map<String, String> data) {
 
         SP.putString("avatarUrlw", data.get("iconurl"));
         SP.putString("openSidw", data.get("unionid"));
-        SP.putString("openIdw",  data.get("openid"));
-        SP.putString("nickw",  data.get("name"));
+        SP.putString("openIdw", data.get("openid"));
+        SP.putString("nickw", data.get("name"));
 
         Map<String, String> map = new HashMap<>();
         map.put("avatarUrl", data.get("iconurl"));
@@ -402,12 +406,13 @@ public class LoginNewActivity extends BaseActivity {
         map.put("unionid", data.get("unionid"));
         map.put("userNick", data.get("name"));
 //        EventBus.getDefault().post(new RefreshListData());
-        new Request<LoginResponse>().request(RxJavaUtil.xApi().WxLogin(map), "微信登陆", LoginNewActivity.this, false, new Result<LoginResponse>() {
+        parsingPresenter.start("WxLogin", "WxLogin", "", map);
+ /*       new Request<LoginResponse>().request(RxJavaUtil.xApi().WxLogin(map), "微信登陆", LoginNewActivity.this, false, new Result<LoginResponse>() {
             @Override
             public void get(LoginResponse response) {
                 Intent intent1 = null;
 
-                //   SP.putString("phone", response.getRetval().getToken());
+                //   SP.putString("phone", response.getRetval().getToken());  WxLogin  LoginResponse
                 if (StringUtils.isEmpty(response.getRetval().getToken()))
                     intent1 = new Intent(LoginNewActivity.this, RegisterActivity1.class);
                 else {
@@ -423,6 +428,74 @@ public class LoginNewActivity extends BaseActivity {
                 startActivity(intent1);
                 finish();
             }
-        });
+        });*/
+    }
+
+    @NotNull
+    @Override
+    public Activity initview() {
+        ButterKnife.bind(this);
+        setOnclick();
+        EventBus.getDefault().register(this);
+        Const.area = "86";
+        parsingPresenter = new ParsingPresenter(this);
+        return this;
+    }
+
+    @Override
+    public <T> void setData(@NotNull String type, T bean) {
+        if (bean == null) {
+            return;
+        }
+        if ("CheckMobile".equals(type)) {
+            CheckMobileBean response = (CheckMobileBean) bean;
+            if (response.getStatus_code() == 200) {
+                //已注册 CheckMobileBean CheckMobile
+                if (response.getData().getIsregister() == 1) {
+                    Intent intent = new Intent(LoginNewActivity.this, PasswordActivity.class);
+                    intent.putExtra("phone", Const.phone);
+                    intent.putExtra("area", tvArea.getText().toString());
+                    startActivity(intent);
+                } else {
+                    //未注册
+                    RegistDialog dialog = new RegistDialog(LoginNewActivity.this, () -> {
+
+                        Intent intent = new Intent(LoginNewActivity.this, RegisterActivity1.class);
+                        intent.putExtra("phone", Const.phone);
+                        startActivity(intent);
+
+                    });
+                    dialog.show();
+
+                }
+
+            } else {
+                Utils.ToastShort(LoginNewActivity.this, "请求错误");
+            }
+        } else if ("WxLogin".equals(type)) {
+            Intent intent1 = null;
+            LoginResponse response = (LoginResponse) bean;
+            //   SP.putString("phone", response.getRetval().getToken());  WxLogin  LoginResponse
+            if (StringUtils.isEmpty(response.getRetval().getToken()))
+                intent1 = new Intent(LoginNewActivity.this, RegisterActivity1.class);
+            else {
+                SP.putInt("userId", response.getRetval().getUid());
+                SP.putString("token", response.getRetval().getToken());
+                SP.putString("roletypes", response.getRetval().getRoletypes());
+                SP.putString("uproletype", response.getRetval().getUproletypes());
+                SP.putString("deadline", response.getRetval().getDeadline());
+                mHandler.sendMessage(mHandler.obtainMessage(MSG_SET_ALIAS, SPUtils.getInstance().getString(Const.USER_ID, response.getRetval().getUid() + "")));
+                intent1 = new Intent(LoginNewActivity.this, MainActivity.class);
+            }
+//                intent1.putExtra("isRefreshData", true);
+            startActivity(intent1);
+            finish();
+    }
+
+}
+
+    @Override
+    public void onError(@NotNull String type, @NotNull Throwable error) {
+
     }
 }

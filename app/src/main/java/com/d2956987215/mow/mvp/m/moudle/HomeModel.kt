@@ -29,34 +29,45 @@ class HomeModel {
 //    }
 
 
-    fun <T :BaseResponse> getguide(url: String?, map: HashMap<String, Any>?, vararg value: Any?): Observable<T>? {
-        return apiService?.getguide(map) as  Observable<T>
+    fun <T : BaseResponse> getguide(url: String?, map: HashMap<String, Any>?, vararg value: Any?): Observable<T>? {
+        return apiService?.getguide(map) as Observable<T>
     }
 
-    fun <T :BaseResponse> IsNeedRecord(url: String?, map: HashMap<String, String>?, vararg value: Any?): Observable<T>? {
+    fun <T : BaseResponse> IsNeedRecord(url: String?, map: HashMap<String, String>?, vararg value: Any?): Observable<T>? {
         var data = value[0] as kotlin.Array<Any>
-        return apiService?.IsNeedRecord(map,data[0].toString()) as  Observable<T>
+        return apiService?.IsNeedRecord(map, data[0].toString()) as Observable<T>
     }
 
-    fun <T :BaseResponse> homeData(url: String?, map: HashMap<String, String>?, vararg value: Any?): Observable<T>? {
-        return apiService?.homeData(map) as  Observable<T>
+    fun <T : BaseResponse> homeData(url: String?, map: HashMap<String, String>?, vararg value: Any?): Observable<T>? {
+        return apiService?.homeData(map) as Observable<T>
     }
 
-    fun <T :BaseResponse> getHomeGoodsList(url: String?, map: HashMap<String, String>?, vararg value: Any?): Observable<T>? {
-        return apiService?.getHomeGoodsList(map) as  Observable<T>
+    fun <T : BaseResponse> getHomeGoodsList(url: String?, map: HashMap<String, String>?, vararg value: Any?): Observable<T>? {
+        return apiService?.getHomeGoodsList(map) as Observable<T>
     }
 
-    fun <T :BaseResponse> timelist(url: String?, map: HashMap<String, String>?, vararg value: Any?): Observable<T>? {
-        return apiService?.timelist(map) as  Observable<T>
+    fun <T : BaseResponse> timelist(url: String?, map: HashMap<String, String>?, vararg value: Any?): Observable<T>? {
+        return apiService?.timelist(map) as Observable<T>
     }
-    fun <T :BaseResponse> authTaoBaoNotice(url: String?, map: HashMap<String, String>?, vararg value: Any?): Observable<T>? {
+
+    fun <T : BaseResponse> authTaoBaoNotice(url: String?, map: HashMap<String, String>?, vararg value: Any?): Observable<T>? {
         var data = value[0] as kotlin.Array<Any>
-        return apiService?.authTaoBaoNotice(map,data[0].toString()) as  Observable<T>
+        return apiService?.authTaoBaoNotice(map, data[0].toString()) as Observable<T>
     }
 
-    fun <T :BaseResponse> jiantie(url: String?, map: HashMap<String, String>?, vararg value: Any?): Observable<T>? {
-        return apiService?.jiantie(map) as  Observable<T>
+    fun <T : BaseResponse> jiantie(url: String?, map: HashMap<String, String>?, vararg value: Any?): Observable<T>? {
+        return apiService?.jiantie(map) as Observable<T>
     }
+
+    fun <T : BaseResponse> CheckMobile(url: String?, map: HashMap<String, String>?, vararg value: Any?): Observable<T>? {
+        return apiService?.CheckMobile(map) as Observable<T>
+    }
+
+    fun <T : BaseResponse> WxLogin(url: String?, map: HashMap<String, String>?, vararg value: Any?): Observable<T>? {
+        return apiService?.WxLogin(map) as Observable<T>
+    }
+
+
 
 
 }
